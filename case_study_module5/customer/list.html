@@ -13,21 +13,15 @@
 
     }
 
-
-    .auto-car {
-        padding-left: 30px;
-
-
-    }
-
     .button-create {
         padding: 20px;
 
         text-align: center;
     }
+    .color-tr{}
 </style>
 <body>
-<div class=" container-fluid">
+<div class=" container">
     <div class="card bg-dark text-white">
         <img src="../img/banner01.jpg" alt="">
         <!--        <div class="header-home">-->
@@ -41,69 +35,159 @@
                 <button type="button" class="btn btn-outline-secondary">
                     <a style="text-decoration:none" href="create.html"> create customer</a>
                 </button>
-
             </div>
 
-            <table class="table">
-            <tr>
-                <th>id</th>
-                <th>number1</th>
-                <th>number2</th>
-                <th>number3</th>
-                <th>number4</th>
-                <th>sửa</th>
-                <th>delete</th>
-            </tr>
+            <table class="table" style="text-align: center" >
+                <tr class="color-tr">
+                    <th>No.</th>
+                    <th>Họ tên</th>
+                    <th>ngày sinh</th>
+                    <th>Giới tính</th>
+                    <th>Số CMND</th>
+                    <th>Số Điện Thoại</th>
+                    <th>Email</th>
+                    <th>Loại khách</th>
+                    <th>Địa chỉ</th>
+                    <th>sửa</th>
+                    <th>delete</th>
+                </tr>
+
                 <tr>
-                    <td>1242</td>
-                    <td>1242</td>
-                    <td>1242</td>
-                    <td>1242</td>
-                    <td>1242</td>
-                    <td>  <button type="button" class="btn btn-success"><a href="edit.html">sửa</a></button></td>
-                  <td>
-                      <!-- Button trigger modal -->
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          delete
-                      </button></td>
+                    <td>1</td>
+                    <td>trần văn a</td>
+                    <td>12/3/1993</td>
+                    <td>nam</td>
+                    <td>09325893</td>
+                    <td>07933333</td>
+                    <td>demngoikhoc@gmail.com</td>
+                    <td>vip</td>
+                    <td>dà nẵng si ty</td>
+                    <td>
+                        <div class="col button-sua"><a href="edit.html" class="btn btn-outline-warning">edit</a>
+                        </div>
+                    </td>
+                    <td>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                            xoá
+                        </button>
+                    </td>
+                <tr>
+                    <td>1</td>
+                    <td>trần văn a</td>
+                    <td>12/3/1993</td>
+                    <td>nam</td>
+                    <td>09325893</td>
+                    <td>07933333</td>
+                    <td>demngoikhoc@gmail.com</td>
+                    <td>vip</td>
+                    <td>dà nẵng si ty</td>
+                    <td>
+                        <div class="col button-sua"><a href="edit.html" class="btn btn-outline-warning">edit</a>
+                        </div>
+                    </td>
+                    <td>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                            xoá
+                        </button>
+                    </td>   <tr>
+                    <td>1</td>
+                    <td>trần văn a</td>
+                    <td>12/3/1993</td>
+                    <td>nam</td>
+                    <td>09325893</td>
+                    <td>07933333</td>
+                    <td>demngoikhoc@gmail.com</td>
+                    <td>vip</td>
+                    <td>dà nẵng si ty</td>
+                    <td>
+                        <div class="col button-sua"><a href="edit.html" class="btn btn-outline-warning">sửa</a>
+                        </div>
+                    </td>
+                    <td>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                            xoá
+                        </button>
+                    </td>
                 </tr>
 
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <h5 class="modal-title" id="exampleModalLabel">delete</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                             </div>
+<!--                            delete moda-->
                             <div class="modal-body">
-                                <form>
-                                    <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                <form class="px-md-2">
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="form3Example1q" class="form-control"/>
+                                        <label class="form-label" for="form3Example1q">Họ tên</label>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="form3Example1q2" class="form-control"/>
+                                        <label class="form-label" for="form3Example1q">ngày sinh</label>
                                     </div>
-                                    <div class="mb-3 form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="form3Example1q3" class="form-control"/>
+                                        <label class="form-label" for="form3Example1q">Giới tính</label>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="form3Example1q4" class="form-control"/>
+                                        <label class="form-label" for="form3Example1q">Số CMND</label>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="form3Example1q5" class="form-control"/>
+                                        <label class="form-label" for="form3Example1q">Số Điện Thoại</label>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="form3Example1q7" class="form-control"/>
+                                        <label class="form-label" for="form3Example1q">Email</label>
+                                    </div>   <div class="form-outline mb-4">
+                                    <input type="text" id="form3Example1q8" class="form-control"/>
+                                    <label class="form-label" for="form3Example1q">Loại khách</label>
+                                </div>
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="form3Example1q9" class="form-control"/>
+                                        <label class="form-label" for="form3Example1q">Địa chỉ </label>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-success btn-lg mb-1">xoá</button>
+                                    <button type="submit" class="btn btn-success btn-lg mb-1">thoát</button>
+
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">xoá</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">thoát</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </table>
-<!--            &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>            <!--            &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
             <footer class="text-center text-lg-start bg-light text-muted">
                 <!-- Section: Social media -->
                 <section
