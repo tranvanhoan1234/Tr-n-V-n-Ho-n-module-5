@@ -8,7 +8,7 @@ var calculateValue = function (input) {
     return calculateValue(input - 2) + calculateValue(input - 1);
 };
 var sum = 0;
-for (var n = 1; n < 11; ++n) {
+for (var n = 0; n < 10; ++n) {
     var value = calculateValue(n);
     console.log('f(' + n + ')=' + value);
     sum += value;
