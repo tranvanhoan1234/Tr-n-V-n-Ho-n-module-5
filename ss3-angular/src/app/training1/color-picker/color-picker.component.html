@@ -1,0 +1,8 @@
+<p>color-picker works!</p>
+<div>
+  <input type="range" min="0" max="255" (input)="colorPicker1($event.target.value)">{{color1}}<br>
+  <input type="range" min="0" max="255" (input)="colorPicker2($event.target.value)">{{color2}}<br>
+  <input type="range" min="0" max="255" (input)="colorPicker3($event.target.value)">{{color3}}
+</div>
+<div [style.background-color]="'rgb('+color1+','+color2+','+color3+')'" [style.width]="'100px'"
+     [style.height]="'100px'"></div>

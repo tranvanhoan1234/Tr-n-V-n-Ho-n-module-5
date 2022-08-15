@@ -1,0 +1,24 @@
+<div class="container">
+  <p style="color: #0dcaf0">calculator Simpler</p>
+  <label> số 1</label>
+  <div>
+    <input type="number" [(ngModel)]="num1">
+  </div>
+
+  <label> số 2</label>
+  <div>
+    <input type="number" [(ngModel)]="num2">
+  </div>
+  <br>
+  <div style="padding-left: 30px">
+    <button (click)="calculatorSimple('+')">+</button>
+    <button (click)="calculatorSimple('-')">-</button>
+    <button (click)="calculatorSimple('*')">*</button>
+    <button (click)="calculatorSimple('/')">/</button>
+  </div>
+  <hr>
+  <label>kết quả</label>
+  <div>
+    <input [ngModel]="result" readonly>
+  </div>
+</div>
