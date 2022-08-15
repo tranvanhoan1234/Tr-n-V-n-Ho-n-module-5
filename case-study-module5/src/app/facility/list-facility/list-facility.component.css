@@ -1,0 +1,29 @@
+.header-home > card-img-overlay {
+  height: 40px;
+}
+
+
+.button-sua {
+  padding-right: 50px;
+  height: 30px;
+  width: 30px;
+
+}
+
+
+.button-create {
+  padding: 20px;
+  text-align: center;
+}
+
+.carousel:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+
+}
+
+.carousel-item > img {
+  height: 230px;
+  width: 100%;
+}

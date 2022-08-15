@@ -1,0 +1,7 @@
+.navbar {
+  /*background-color: black !important;*/
+  position: fixed;
+  z-index: 2000;
+  width: 100%;
+  opacity: 0.5;
+}

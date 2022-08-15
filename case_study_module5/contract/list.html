@@ -16,14 +16,14 @@
         position: fixed;
         z-index: 2000;
         width: 100%;
-        opacity: 0.6;
+        opacity: 0.5;
     }
 </style>
 <body>
 <div>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a style="color: chartreuse" class="navbar-brand" href="#">Contract</a>
+            <a style="color: chartreuse" class="navbar-brand" href="#">List Contract</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,8 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" style="color: chartreuse" aria-current="page" href="#">Home</a>
-                    </li>  <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" style="color: chartreuse" aria-current="page" href="#">Facility</a>
                     </li>
                     <li class="nav-item">
@@ -52,66 +53,68 @@
         </div>
     </nav>
     <div class="card bg-dark text-white">
-        <img src="../img/banner01.jpg" alt="">
+        <img src="../../case-study-module5/src/app/img/banner01.jpg" alt="">
+    </div>
+</div>
+<div class="row">
+    <div class="button-create col">
+        <figure class="text-center">
+            <blockquote class="blockquote">
+                <p>Welcome to our client list.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+                source <cite title="Source Title">: Văn Hoàn</cite>
+            </figcaption>
+            <button type="button" style="text-align: center;margin-bottom: 5px" class="btn btn-outline-secondary">
+                <a style="text-decoration:none" href="create.html"> Create Customer</a>
+            </button>
+        </figure>
     </div>
 </div>
 <div class="container">
     <table class="table" style="text-align: center">
         <thead class="table-primary">
         <tr>
-            <th>stt</th>
-            <th>dịch vụ</th>
-            <th> khách hàng</th>
-            <th> ngày bắt đầu</th>
-            <th> ngày kết thúc</th>
-            <th> tiền đặt cọc</th>
+            <th>No.</th>
+            <th>Service</th>
+            <th> Customer</th>
+            <th> StartDay</th>
+            <th> EndDate</th>
+            <th> Deposit</th>
+            <th> Accompanied service</th>
 
         </tr>
         </thead>
         <tbody>
-        <tr>
+        <tr style="text-align: center">
             <td>1</td>
-            <td>a</td>
-            <td>b</td>
-            <td>c</td>
-            <td>d</td>
-            <td>y</td>
-
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>a</td>
-            <td>b</td>
-            <td>c</td>
-            <td>d</td>
-            <td>y</td>
-
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>a</td>
-            <td>b</td>
-            <td>c</td>
-            <td>d</td>
-            <td>y</td>
+            <td>Hose</td>
+            <td>Trần Văn Hoàn</td>
+            <td>12-1-2021</td>
+            <td>12-1-2022</td>
+            <td>10.0000</td>
+            <td>
+                <a class="btn btn-primary" href="#" role="button">+</a>
+                <a class="btn btn-primary" href="#" role="button">List Of Included Services</a>
+            </td>
 
         </tr>
         </tbody>
     </table>
     <div>
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">Previous</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-            </li>
-        </ul>
-    </nav>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>
 <div>

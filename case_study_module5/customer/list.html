@@ -36,7 +36,6 @@
 </style>
 <body>
 <div>
-
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <a style="color: white" class="navbar-brand" href="#">Customer</a>
@@ -66,121 +65,119 @@
             </div>
         </div>
     </nav>
-
-
     <div class="card bg-dark text-white">
-        <img src="../img/banner01.jpg" alt="">
+        <img src="../../case-study-module5/src/app/img/banner01.jpg" alt="">
     </div>
+
 </div>
+    <div class=" container">
+        <!-- car -->
+        <div class="auto-car">
+            <div class="img-style row">
+                <div class="button-create col">
+                    <figure class="text-center">
+                        <blockquote class="blockquote">
+                            <p>Welcome to our client list.</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            source <cite title="Source Title">: Văn Hoàn</cite>
+                        </figcaption>
+                    </figure>
+                    <button type="button" class="btn btn-outline-secondary">
 
-<div class=" container">
-    <!-- car -->
-    <div class="auto-car">
-        <div class="img-style row">
-            <div class="button-create col">
-                <figure class="text-center">
-                    <blockquote class="blockquote">
-                        <p>Welcome to our client list.</p>
-                    </blockquote>
-                    <figcaption class="blockquote-footer">
-                        source <cite title="Source Title">: Văn Hoàn</cite>
-                    </figcaption>
-                </figure>
-                <button type="button" class="btn btn-outline-secondary">
+                        <a style="text-decoration:none" href="create.html"> Create Customer</a>
+                    </button>
+                </div>
 
-                    <a style="text-decoration:none" href="create.html"> Create Customer</a>
-                </button>
-            </div>
+                <table class="table" style="text-align: center">
+                    <tr class="color-tr">
+                        <th>No.</th>
+                        <th>Full name</th>
+                        <th>Date of birth</th>
+                        <th>Gender</th>
+                        <th>Card number</th>
+                        <th>Phone number</th>
+                        <th>Email</th>
+                        <th>Guest type</th>
+                        <th>Address</th>
+                        <th>Edit</th>
+                        <th>delete</th>
+                    </tr>
 
-            <table class="table" style="text-align: center">
-                <tr class="color-tr">
-                    <th>No.</th>
-                    <th>Full name</th>
-                    <th>Date of birth</th>
-                    <th>Gender</th>
-                    <th>Card number</th>
-                    <th>Phone number</th>
-                    <th>Email</th>
-                    <th>Guest type</th>
-                    <th>Address</th>
-                    <th>Edit</th>
-                    <th>delete</th>
-                </tr>
-
-                <tr>
-                    <td>1</td>
-                    <td>Trần Văn A</td>
-                    <td>12/3/1993</td>
-                    <td>nam</td>
-                    <td>09325893</td>
-                    <td>07933333</td>
-                    <td>demngoikhoc@gmail.com</td>
-                    <td>Vip</td>
-                    <td>Đà Năng</td>
-                    <td>
-                        <div class="col button-sua"><a href="edit.html" class="btn btn-primary">edit</a>
-                        </div>
-                    </td>
-                    <td>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
-                            xoá
-                        </button>
-                    </td>
-                <tr>
-
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                         aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">delete</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                </div>
-                                <!--                            delete moda-->
-                                <div class="modal-body">
-                                    <form class="px-md-2">
-                                        <div class="form-outline mb-4">
-                                            <input type="text" id="form3Example1q" class="form-control"/>
-                                            <label class="form-label" for="form3Example1q">Họ tên</label>
-                                        </div>
+                    <tr>
+                        <td>1</td>
+                        <td>Trần Văn A</td>
+                        <td>12/3/1993</td>
+                        <td>nam</td>
+                        <td>09325893</td>
+                        <td>07933333</td>
+                        <td>demngoikhoc@gmail.com</td>
+                        <td>Vip</td>
+                        <td>Đà Năng</td>
+                        <td>
+                            <div class="col button-sua"><a href="edit.html" class="btn btn-primary">edit</a>
+                            </div>
+                        </td>
+                        <td>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                delete
+                            </button>
+                        </td>
+                    <tr>
 
 
-                                        <button type="submit" class="btn btn-success btn-lg mb-1">xoá</button>
-                                        <button type="submit" class="btn btn-success btn-lg mb-1">thoát</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">delete</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <!--                            delete moda-->
+                                    <div class="modal-body">
+                                        <form class="px-md-2">
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="form3Example1q" class="form-control"/>
+                                                <label class="form-label" for="form3Example1q">Họ tên</label>
+                                            </div>
 
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">xoá
-                                    </button>
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">thoát
-                                    </button>
+
+                                            <button type="submit" class="btn btn-success btn-lg mb-1">xoá</button>
+                                            <button type="submit" class="btn btn-success btn-lg mb-1">thoát</button>
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">xoá
+                                        </button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">thoát
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-            </table>
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
+                </table>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
-</div>
 
 <!--            &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
 <footer class="text-center text-lg-start bg-light text-muted">

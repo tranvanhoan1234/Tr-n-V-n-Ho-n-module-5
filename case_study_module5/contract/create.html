@@ -12,15 +12,54 @@
             height: 100vh !important;
         }
     }
+
+    .navbar {
+        /*background-color: black !important;*/
+        position: fixed;
+        z-index: 2000;
+        width: 100%;
+        opacity: 0.6;
+    }
 </style>
 <body>
 <div>
     <section class="h-100 h-custom">
-        <div class="card bg-dark text-white">
-            <img src="../img/banner01.jpg" alt="">
-            <!--        <div class="header-home">-->
-            <!--            -->
-            <!--        </div>-->
+        <div>
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a style="color: white" class="navbar-brand" href="#">Create Contract</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Facility</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Contract</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Employee</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+
+            <div class="card bg-dark text-white">
+                <img src="../../case-study-module5/src/app/img/banner01.jpg" alt="">
+            </div>
         </div>
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -30,49 +69,62 @@
                              class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
                              alt="Sample photo">
                         <div class="card-body p-4 p-md-5">
-                            <form class="px-md-2">
-                                <div class="col-md-6 mb-4">
-                                    <div><label class="form-label" for="form3Example1q">tên dich vụ</label></div>
-                                    <select class="select">
+                            <div class="row">
+                                <div class="button-create col">
+                                    <figure class="text-center">
+                                        <blockquote class="blockquote">
+                                            <p>Welcome to our client create.</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer">
+                                            source <cite title="Source Title">: Văn Hoàn</cite>
+                                        </figcaption>
+                                    </figure>
 
-                                        <option value="1">villa</option>
-                                        <option value="2">hose</option>
+                                </div>
+                            </div>
+                            <form class="px-md-2">
+                                <div class="col-md-12 mb-4">
+                                  <label class="form-label" for="form3Example1q">Facility</label>
+                                    <select class="select form-control">
+
+                                        <option value="2">Hose</option>
                                         <option value="3">room</option>
+                                        <option value="4">villa</option>
 
                                     </select>
 
                                 </div>
+
+
                                 <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Example1q">Usable Area</label>
                                     <input type="text" id="form3Example1q" class="form-control"/>
-                                    <label class="form-label" for="form3Example1q">Diện tích sử dụng</label>
                                 </div>
                                 <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Example1q">Rental Costs</label>
                                     <input type="text" id="form3Example1q2" class="form-control"/>
-                                    <label class="form-label" for="form3Example1q">Chi phí thuê</label>
                                 </div>
                                 <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Example1q">Max Number Of People</label>
                                     <input type="text" id="form3Example1q3" class="form-control"/>
-                                    <label class="form-label" for="form3Example1q">Số lượng người tối đa</label>
                                 </div>
                                 <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Example1q">Description Of Other Facilities</label>
                                     <input type="text" id="form3Example1q4" class="form-control"/>
-                                    <label class="form-label" for="form3Example1q">Mô tả tiện nghi khác</label>
                                 </div>
                                 <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Example1q">Pool Area</label>
                                     <input type="text" id="form3Example1q5" class="form-control"/>
-                                    <label class="form-label" for="form3Example1q">Diện tích hồ bơi</label>
                                 </div>
                                 <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Example1q">Number Of Floors</label>
                                     <input type="text" id="form3Example1q6" class="form-control"/>
-                                    <label class="form-label" for="form3Example1q">Số tầng</label>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-6 mb-4">
-
-                                        <div><label class="form-label" for="form3Example1q">kiểu thuê</label></div>
-                                        <select class="select">
-
+                                    <div class="col-md-12 mb-4">
+                                        <div><label class="form-label" for="form3Example1q">Rental Type</label></div>
+                                        <select  class="select form-control">
                                             <option value="2">năm</option>
                                             <option value="3">tháng</option>
                                             <option value="4">ngày</option>
@@ -81,8 +133,8 @@
 
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
-                                <button type="submit" class="btn btn-success btn-lg mb-1">close</button>
+                                <button type="submit" class="btn btn-success btn-lg mb-1">Create</button>
+                                <button type="submit" class="btn btn-success btn-lg mb-1">Close</button>
 
                             </form>
 

@@ -1,0 +1,112 @@
+<div class=" container">
+  <!-- car -->
+  <div class="auto-car">
+    <div class="img-style row">
+      <div class="button-create col">
+        <figure class="text-center">
+          <blockquote class="blockquote">
+            <p>Welcome to our client list.</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            source <cite title="Source Title">: Văn Hoàn</cite>
+          </figcaption>
+          <button type="button" class="btn btn-outline-warning">
+            <a style="text-decoration:none" href="" routerLink ='/customer/create'> Create Customer</a>
+          </button>
+        </figure>
+      </div>
+
+      <table class="table" style="text-align: center">
+        <thead>
+        <tr class="" style="background: whitesmoke">
+          <th>No.</th>
+          <th>Full name</th>
+          <th>Date of birth</th>
+          <th>Gender</th>
+          <th>Card number</th>
+          <th>Phone number</th>
+          <th>Email</th>
+          <th>Guest type</th>
+          <th>Address</th>
+          <th>Edit</th>
+          <th>delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>Trần Văn A</td>
+          <td>12/3/1993</td>
+          <td>nam</td>
+          <td>09325893</td>
+          <td>07933333</td>
+          <td>demngoikhoc@gmail.com</td>
+          <td>Vip</td>
+          <td>Đà Năng</td>
+          <td>
+            <div class="col button-sua"><a href="" class="btn btn-outline-warning">edit</a>
+            </div>
+          </td>
+          <td>
+            <!-- Button trigger modal -->
+            <div>
+              <button class="btn btn-outline-danger" data-bs-toggle="modal"
+                      data-bs-target="#exampleModal">
+                delete
+              </button>
+            </div>
+          </td>
+        </tr>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+              </div>
+              <!--                            delete moda-->
+              <div class="modal-body">
+                <form class="px-md-2">
+                  <div class="form-outline mb-4">
+                    <label class="form-label" >name</label>
+                  </div>
+                  <div class="form-outline mb-4">
+
+                    <label class="form-label" >id</label>
+                  </div>
+
+
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Delete
+                </button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </tbody>
+      </table>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

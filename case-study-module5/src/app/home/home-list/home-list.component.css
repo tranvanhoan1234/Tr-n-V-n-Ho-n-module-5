@@ -1,0 +1,12 @@
+.alert {
+  margin: 1em 0 0.5em 0;
+  color: #343434;
+  font-size: 22px;
+  line-height: 40px;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: 1px;
+  font-style: italic;
+
+}
