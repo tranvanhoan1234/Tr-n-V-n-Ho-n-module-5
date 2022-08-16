@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FontSizeComponent } from './font-size.component';
+import {FontSizeComponent} from './font-size.component';
 
 describe('FontSizeComponent', () => {
   let component: FontSizeComponent;
@@ -8,9 +8,9 @@ describe('FontSizeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FontSizeComponent ]
+      declarations: [FontSizeComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

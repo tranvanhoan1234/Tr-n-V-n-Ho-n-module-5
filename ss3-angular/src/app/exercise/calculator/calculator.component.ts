@@ -13,9 +13,7 @@ export class CalculatorComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit()
-    :
-    void {
+  ngOnInit(): void {
   }
 
   calculatorSimple(num3) {

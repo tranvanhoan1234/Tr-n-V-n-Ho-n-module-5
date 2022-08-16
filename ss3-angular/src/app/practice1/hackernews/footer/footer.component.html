@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>add link</h2>
+  <table class="table ">
+    <div *ngFor="let art of articles">
+      <label>link : </label>
+      <div><a href="{{art.url}}" target="_blank">{{art.title}} </a></div>
+      <div>
+
+        <input type="text"> comment</div>
+      <br>
+      <app-like></app-like>
+      <br>
+    </div>
+    <tr>
+      <th>Title:</th>
+      <th>Url:</th>
+    </tr>
+    <td><textarea [(ngModel)]="article.title" cols="70"></textarea></td>
+    <td>
+      <textarea [(ngModel)]="article.url" cols="70"></textarea>
+      <button class="btn btn-outline-danger" (click)="addNewArticle()">Add</button>
+    </td>
+  </table>
+</div>
