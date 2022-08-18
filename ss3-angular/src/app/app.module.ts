@@ -16,6 +16,8 @@ import { ProgressBarComponent } from './practice1/angular-progress-bar/progress-
 import { TodoComponent } from './practice1/angular-name-card/todo/todo.component';
 import { RatingBarComponent } from './exercise/rating-bar/rating-bar.component';
 import { CountdownTimeComponent } from './exercise/countdown-timer/countdown-time/countdown-time.component';
+import { RegisterComponent } from './exercise/registrationForm/register/register.component';
+import { LoginComponent } from './exercise/form-login/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,8 @@ import { CountdownTimeComponent } from './exercise/countdown-timer/countdown-tim
     TodoComponent,
     RatingBarComponent,
     CountdownTimeComponent,
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

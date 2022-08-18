@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3"></div>
+    <form class="form-group col-6" style="border: solid 1px;height: 1000px" [formGroup]="formRegister"
+          (ngSubmit)="onSubmit()">
+
+      <h2>Form Đăng Kí</h2>
+      <div><label>Email</label>
+        <input type="email" class="form-control mt-2" placeholder="Email của bạn" required name="email"
+               formControlName="email">
+
+        <p style="color: red" *ngIf="formRegister.controls.email.hasError('required') && formRegister.touched">không
+          được bỏ trống </p>
+        <p style="color: red" *ngIf="formRegister.controls.email.hasError('email') && formRegister.touched">Sai định dạng
+         </p>
+
+      </div>
+      <br>
+      <div>
+        <label>Nhập mật khẩu</label>
+        <input type="password" class="form-control mt-2" placeholder="Password của bạn" required name="password"
+               formControlName="password">
+        <p style="color: red" *ngIf="formRegister.controls.password.hasError('required') && formRegister.touched">Không được bỏ trống</p>
+        <p style="color: red" *ngIf="formRegister.controls.password.hasError('minlength') && formRegister.touched">Độ dài lớn hớn 6
+
+      </div>
+      <div>
+        <br>
+        <label>Xác nhận Mật khẩu</label>
+        <input type="password" class="form-control mt-2" placeholder="Xác nhận password của bạn" required
+               name="confirmPassword" formControlName="confirmPassword">
+        <p style="color: red" class="error" *ngIf="formRegister.hasError('incorrect') && formRegister.touched">Mk không giống </p>
+        <p style="color: red" class="error" *ngIf="formRegister.hasError('minlength') && formRegister.touched">
+           Độ dài lớn hơn 6</p>
+
+      </div>
+      <div>
+        <br>
+
+        <label>Quốc gia</label>
+        <select class="form-control" name="country">
+          <option value="" selected>Quốc gia</option>
+          <option value="">Việt Nam</option>
+          <option value="">Campuchia</option>
+          <option value="">Lào</option>
+          <option value="">Khác</option>
+          <p style="color: red" *ngIf="formRegister.controls.country.hasError('required') && formRegister.touched">không
+            được bỏ trống</p>
+        </select>
+      </div>
+      <br>
+      <div>
+        <label>Age</label>
+        <input class="form-control mt-2" placeholder="tuổi" required name="age"
+               formControlName="age">
+        <p style="color: red" *ngIf="formRegister.controls.age.hasError('required') && formRegister.touched">không được bỏ trống</p>
+        <p style="color: red" *ngIf="formRegister.controls.age.hasError('pattern') && formRegister.touched">Tuổi lớn hớn 18</p>
+      </div>
+      <br>
+      <div class="row" name="gender" formControlName="gender">
+        <label>Giới Tính</label>
+        <div class="col">
+          <label>Nam</label>
+          <input type="radio" name="nam" value="Nam" formControlName="gender"></div>
+        <div class="col">
+          <label>Nữ</label>
+          <input type="radio" name="nu" value="Nữ" formControlName="gender">
+        </div>
+        <div class="col">
+          <label>LGBT</label>
+          <input type="radio" name="lgbt" value="lgbt" formControlName="gender">
+        </div>
+        <p style="color: red" *ngIf="formRegister.controls.gender.hasError('required') && formRegister.touched"> bắt buộc chọn</p>
+
+      </div>
+      <br>
+      <div>
+        <label>Số điện thoại</label>
+        <input type="number" class="form-control mt-2" placeholder="" required name="phone" formControlName="phone">
+        <p style="color: red" *ngIf="formRegister.controls.phone.hasError('required') && formRegister.touched"> bắt buộc nhập</p>
+        <p style="color: red" *ngIf="formRegister.controls.phone.hasError('pattern') && formRegister.touched"> sai định dạng 10 số</p>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success mt-2" (click)="onSubmit()" type="submit">Gửi</button>
+      </div>
+    </form>
+    <div class="col-3"></div>
+  </div>
+</div>

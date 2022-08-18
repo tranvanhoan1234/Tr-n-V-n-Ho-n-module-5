@@ -1,0 +1,32 @@
+<div class="container">
+  <form class="form-group col-6" style="border: solid 1px;height: 1000px" [formGroup]="formLogin"
+        (ngSubmit)="onSubmit()">
+
+    <h2>Form Login</h2>
+    <div><label>Email</label>
+      <input type="email" class="form-control mt-2" placeholder="Email của bạn" required name="email"
+             formControlName="email">
+
+      <p style="color: red" *ngIf="formLogin.controls.email.hasError('required')&& formLogin.touched">không
+        được bỏ trống </p>
+          <p style="color: red" *ngIf="formLogin.controls.email.hasError('email') && formLogin.touched">Sai định dạng
+          </p>
+
+    </div>
+    <br>
+      <div>
+        <label>Nhập mật khẩu</label>
+        <input type="password" class="form-control mt-2" placeholder="Password của bạn" required name="password"
+               formControlName="password">
+        <p style="color: red" *ngIf="formLogin.controls.password.hasError('required') && formLogin.touched">Không được
+          bỏ trống</p>
+        <p style="color: red" *ngIf="formLogin.controls.password.hasError('minlength') && formLogin.touched">Độ dài
+          lớn hớn 6
+        </p>
+      </div>
+    <br>
+    <div>
+      <button class="btn-outline-primary" (click)="onSubmit()">submit</button>
+    </div>
+  </form>
+</div>
