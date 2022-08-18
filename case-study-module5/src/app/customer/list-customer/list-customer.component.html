@@ -1,5 +1,5 @@
-<div class=" container">
-  <!-- car -->
+  <div class=" container-fluid">
+      <!-- car -->
   <div class="auto-car">
     <div class="img-style row">
       <div class="button-create col">
@@ -10,13 +10,12 @@
           <figcaption class="blockquote-footer">
             source <cite title="Source Title">: Văn Hoàn</cite>
           </figcaption>
-          <button type="button" class="btn btn-outline-warning">
-            <a style="text-decoration:none" href="" routerLink ='/customer/create'> Create Customer</a>
-          </button>
+          <a style="text-decoration:none;" type="button" class="btn  btn-outline-primary " href=""
+             routerLink='/customer/create'> Create Customer</a>
         </figure>
       </div>
-
-      <table class="table" style="text-align: center">
+<!--      <form action="">-->
+      <table class="table table-bordered " style="text-align: center">
         <thead>
         <tr class="" style="background: whitesmoke">
           <th>No.</th>
@@ -33,18 +32,18 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>1</td>
-          <td>Trần Văn A</td>
-          <td>12/3/1993</td>
-          <td>nam</td>
-          <td>09325893</td>
-          <td>07933333</td>
-          <td>demngoikhoc@gmail.com</td>
-          <td>Vip</td>
-          <td>Đà Năng</td>
+        <tr *ngFor="let item of customerList;">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.dateOfBirth}}</td>
+          <td>{{item.gender}}</td>
+          <td>{{item.cardNumber}}</td>
+          <td>{{item.phoneNumber}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.guestType}}</td>
+          <td>{{item.address}}</td>
           <td>
-            <div class="col button-sua"><a href="" class="btn btn-outline-warning">edit</a>
+            <div class="col button-sua"><a  routerLink="/customer/edit" class="btn btn-outline-warning">Edit</a>
             </div>
           </td>
           <td>
@@ -52,7 +51,7 @@
             <div>
               <button class="btn btn-outline-danger" data-bs-toggle="modal"
                       data-bs-target="#exampleModal">
-                delete
+                Delete
               </button>
             </div>
           </td>
@@ -65,7 +64,8 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">delete</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Delete Customer</h5>
+
                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
               </div>
@@ -73,20 +73,19 @@
               <div class="modal-body">
                 <form class="px-md-2">
                   <div class="form-outline mb-4">
-                    <label class="form-label" >name</label>
+                    <p>are you sure you want to delete customer with id : </p>
+                    <label class="form-label">....</label>
                   </div>
                   <div class="form-outline mb-4">
-
-                    <label class="form-label" >id</label>
+                    <p>end name with : </p>
+                    <label class="form-label">.....</label>
                   </div>
-
-
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Delete
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Delete
                 </button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
+                <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Close
                 </button>
               </div>
             </div>
@@ -94,6 +93,7 @@
         </div>
         </tbody>
       </table>
+<!--      </form>-->
       <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
           <li class="page-item disabled">

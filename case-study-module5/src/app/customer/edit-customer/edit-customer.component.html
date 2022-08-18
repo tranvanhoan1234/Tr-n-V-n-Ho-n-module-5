@@ -14,46 +14,53 @@
                  class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
                  alt="Sample photo">
             <div class="card-body p-4 p-md-5">
-              <h3 style="text-align: center" class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"> sửa khách hàng </h3>
+              <h3 style="text-align: center" class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"> Edit Customer </h3>
 
-              <form class="px-md-2">
+<!--              <form class="px-md-2">-->
 
                 <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q">Name</label>
                   <input type="text" id="form3Example1q" class="form-control"/>
-                  <label class="form-label" for="form3Example1q">Họ tên</label>
                 </div>
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example1q2" class="form-control"/>
-                  <label class="form-label" for="form3Example1q">ngày sinh</label>
+                  <label class="form-label" for="form3Example1q">Date of birth</label>
+                  <input type="date" id="form3Example1q2" class="form-control"/>
                 </div>
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example1q3" class="form-control"/>
-                  <label class="form-label" for="form3Example1q">Giới tính</label>
+                <div>
+                  <label class="form-label" for="form3Example1q">Gender</label>
+                  <br>
+                  <select class="form-select" id="form3Example1q3">
+                    <option value="1">Male</option>
+                    <option value="2">female</option>
+                    <option value="3">3rd World</option>
+                  </select>
                 </div>
+                <br>
                 <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q">Id card</label>
                   <input type="text" id="form3Example1q4" class="form-control"/>
-                  <label class="form-label" for="form3Example1q">Số CMND</label>
                 </div>
                 <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q">Number phone</label>
                   <input type="text" id="form3Example1q5" class="form-control"/>
-                  <label class="form-label" for="form3Example1q">Số Điện Thoại</label>
                 </div>
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example1q7" class="form-control"/>
                   <label class="form-label" for="form3Example1q">Email</label>
-                </div>   <div class="form-outline mb-4">
-                <input type="text" id="form3Example1q8" class="form-control"/>
-                <label class="form-label" for="form3Example1q">Loại khách</label>
-              </div>
+                  <input type="text" id="form3Example1q7" class="form-control"/>
+                </div>
                 <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q">Type of guest</label>
+                  <input type="text" id="form3Example1q8" class="form-control"/>
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q">Address </label>
                   <input type="text" id="form3Example1q9" class="form-control"/>
-                  <label class="form-label" for="form3Example1q">Địa chỉ </label>
                 </div>
 
-                <button type="submit" class="btn btn-success btn-lg mb-1">sửa</button>
-                <button type="submit" class="btn btn-success btn-lg mb-1">thoát</button>
+                <button type="submit" class="btn btn-success btn-lg mb-1">Edit</button>
+                <a style="margin-left: 5px" type="submit" href="" routerLink='/customer/list' class="btn btn-success btn-lg mb-1">Close</a>
 
-              </form>
+<!--              </form>-->
 
             </div>
           </div>

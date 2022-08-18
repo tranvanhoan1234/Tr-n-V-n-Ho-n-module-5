@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Customer} from '../../module/customer';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-create-contract',
@@ -11,5 +13,9 @@ export class CreateContractComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  ad=new FormGroup({
+    name: new FormControl('')
+
+  })
 
 }

@@ -1,10 +1,8 @@
 <div>
-  <section class="h-100 h-custom" >
+  <section class="h-100 h-custom">
     <div class="card bg-dark text-white">
       <img src="../../case-study-module5/src/app/img/banner01.jpg" alt="">
-      <!--        <div class="header-home">-->
-      <!--            -->
-      <!--        </div>-->
+
     </div>
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -16,45 +14,70 @@
             <div class="card-body p-4 p-md-5">
               <h3 style="text-align: center" class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"> Create Customer </h3>
 
-              <form class="px-md-2">
+              <form class="px-md-2" [formGroup]="customerFrom" (ngSubmit)="onSumbit()"novalidate>
+                <div hidden class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q">id</label>
+                  <input type="text" id="form3Example1q1" class="form-control">
+                  <!--                  formControlName="id"-->
+                </div>
 
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">Name</label>
-                  <input type="text" id="form3Example1q" class="form-control"/>
+                  <div *ngIf="!customerFrom.controls.name?.valid">
+                    name is not
+                  </div>
+                  <input type="text" id="form3Example1q" class="form-control" formControlName="name" >
+                  <!--                  formControlName="name"-->
+
                 </div>
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1q">Date Of Birth</label>
-                  <input type="text" id="form3Example1q2" class="form-control"/>
+                  <label class="form-label" for="form3Example1q">dateOfBirth</label>
+                  <input type="date" id="form3Example1q2" class="form-control">
+                  <!--                  formControlName="dateOfBirth"-->
                 </div>
-                <div class="form-outline mb-4">
+                <div>
                   <label class="form-label" for="form3Example1q">Gender</label>
-                  <input type="text" id="form3Example1q3" class="form-control"/>
+                  <br>
+                  <!--                  formControl="gender"-->
+                  <select class="form-select" id="form3Example1q3">
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                    <option value="3">LGBT</option>
+                  </select>
+                </div>
+                <br>
+                <!--                formControl="cardNumber"-->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q">Id card</label>
+                  <input type="text" id="form3Example1q4" class="form-control">
                 </div>
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1q">Id Card</label>
-                  <input type="text" id="form3Example1q4" class="form-control"/>
-                </div>
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1q">Number Phone</label>
-                  <input type="text" id="form3Example1q5" class="form-control"/>
+                  <label class="form-label" for="form3Example1q">Number phone</label>
+                  <!--                  formControl="phoneNumber"-->
+                  <input type="text" id="form3Example1q5" class="form-control">
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">Email</label>
-                  <input type="text" id="form3Example1q7" class="form-control"/>
-                </div>   <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example1q">Type Of Guest</label>
-                <input type="text" id="form3Example1q8" class="form-control"/>
-              </div>
+                  <input type="text" id="form3Example1q7" class="form-control">
+                  <!--                  formControl="email"-->
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q">Type of guest</label>
+                  <input type="text" id="form3Example1q8" class="form-control">
+                  <!--                  formControl="guestType"-->
+                </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">Address </label>
-                  <input type="text" id="form3Example1q9" class="form-control"/>
+                  <input type="text" id="form3Example1q9" class="form-control">
+                  <!--                  formControl="address"-->
                 </div>
 
-                <button type="submit" class="btn btn-success btn-lg mb-1">Edit</button>
-                <button type="submit" class="btn btn-success btn-lg mb-1">Close</button>
-
+                <button type="submit" class="btn btn-success btn-lg mb-1" [disabled]="!customerFrom.valid"
+                        routerLink="/customer/list">Create
+                </button>
+                <a style="margin-left: 5px" type="submit" href="" routerLink='/customer/list'
+                   class="btn btn-success btn-lg mb-1">Close</a>
               </form>
-
             </div>
           </div>
         </div>

@@ -11,7 +11,6 @@ import {ListContratComponent} from './contract/list-contrat/list-contrat.compone
 import {CreateContractComponent} from './contract/create-contract/create-contract.component';
 import {CommonModule} from '@angular/common';
 
-
 const routes: Routes = [
   {path: '', component: HomeListComponent},
   {path: 'customer/list', component: ListCustomerComponent},

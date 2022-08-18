@@ -10,3 +10,51 @@
   font-style: italic;
 
 }
+
+.carousel:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+
+}
+
+.carousel-item > img {
+  height: auto;
+  width: 100%;
+  border-radius: 5px;
+
+}
+
+.p-text {
+  font-size: 15px;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 400px;
+}
+
+a.btn-booking {
+  margin-left: 70px;
+  padding: 10px 30px ;
+  font-size: 15px;
+  color: #6C6C6C;
+  border: 1px solid #8a8a8a;
+  text-transform: uppercase;
+  font-family: 'Whitney Condensed Book';
+  letter-spacing: 1px;
+}
+.showMore {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  font-size: 14px;
+  line-height: 1.5em;
+  max-height: 75px;
+}
+
+
+
+

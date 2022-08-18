@@ -25,10 +25,10 @@
             ],
             "styles": [
               "src/styles.css",
-              "D:\\C0322g1-tranvanhoan-module5\\case-study-module5\\node_modules\\bootstrap\\dist\\css\\bootstrap.min.css"
+              "node_modules\\bootstrap\\dist\\css\\bootstrap.min.css"
             ],
             "scripts": [
-              "D:\\C0322g1-tranvanhoan-module5\\case-study-module5\\node_modules\\bootstrap\\dist\\js\\bootstrap.min.js"
+              "node_modules\\bootstrap\\dist\\js\\bootstrap.min.js"
             ]
           },
           "configurations": {

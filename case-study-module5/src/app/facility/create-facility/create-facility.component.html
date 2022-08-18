@@ -1,5 +1,5 @@
 <div>
-  <section class="h-100 h-custom" >
+  <section class="h-100 h-custom">
     <div class="card bg-dark text-white">
       <img src="../../case-study-module5/src/app/img/banner01.jpg" alt="">
       <!--        <div class="header-home">-->
@@ -8,52 +8,74 @@
     </div>
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
+
         <div class="col-lg-8 col-xl-6">
           <div class="card rounded-3">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
                  class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
                  alt="Sample photo">
             <div class="card-body p-4 p-md-5">
-              <h3 style="text-align: center" class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"> Thêm Khách Hàng </h3>
+              <h3 style="text-align: center" class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"> Create Facility </h3>
 
-              <form class="px-md-2">
-
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1q">Họ tên</label>
-                  <input type="text" id="form3Example1q" class="form-control"/>
+<!--              <form class="px-md-2">-->
+                <div>
+                <label class="form-label" for="form3Example1q">Service name</label>
+                <select class="form-select" id="form3Example1q">
+                  <option value="1">House</option>
+                  <option value="2">Room</option>
+                  <option value="3">Villa</option>
+                </select>
                 </div>
+                <br>
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1q">ngày sinh</label>
+                  <label class="form-label" for="form3Example1q">Usable area</label>
                   <input type="text" id="form3Example1q2" class="form-control"/>
                 </div>
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1q">Giới tính</label>
+                  <label class="form-label" for="form3Example1q">Rental costs</label>
                   <input type="text" id="form3Example1q3" class="form-control"/>
                 </div>
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1q">Số CMND</label>
+                  <label class="form-label" for="form3Example1q">Max number of people</label>
                   <input type="text" id="form3Example1q4" class="form-control"/>
                 </div>
+                <div>
+                <label class="form-label" for="form3Example1q">Rental type</label>
+                  <br>
+                <select class="form-select" id="form3Example1q5">
+                  <option value="1">five</option>
+                  <option value="2">month</option>
+                  <option value="3">day</option>
+                  <option value="3">hours</option>
+                </select>
+                </div>
+                <br>
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1q">Số Điện Thoại</label>
-                  <input type="text" id="form3Example1q5" class="form-control"/>
+                  <label class="form-label" for="form3Example1q">Room standard</label>
+                  <input type="text" id="form3Example1q6" class="form-control"/>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q">Other amenities description</label>
+                  <input type="text" id="form3Example1q7" class="form-control"/>
                 </div>
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1q">Email</label>
-                  <input type="text" id="form3Example1q7" class="form-control"/>
-                </div>   <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example1q">Loại khách</label>
-                <input type="text" id="form3Example1q8" class="form-control"/>
-              </div>
+                  <label class="form-label" for="form3Example1q">Pool area</label>
+                  <input type="text" id="form3Example1q8" class="form-control"/>
+                </div>
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1q">Địa chỉ </label>
+                  <label class="form-label" for="form3Example1q">No. of floors </label>
                   <input type="text" id="form3Example1q9" class="form-control"/>
                 </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q">Free service included </label>
+                  <input type="text" id="form3Example1q10" class="form-control"/>
+                </div>
 
-                <button type="submit" class="btn btn-success btn-lg mb-1">Sửa</button>
-                <button type="submit" class="btn btn-success btn-lg mb-1">Thoát</button>
+                <button type="submit" class="btn btn-success btn-lg mb-1">Edit</button>
+                <a style="margin-left: 5px" href="" routerLink='/facility/list' type="submit" class="btn btn-success btn-lg mb-1">Close</a>
 
-              </form>
+<!--              </form>-->
 
             </div>
           </div>

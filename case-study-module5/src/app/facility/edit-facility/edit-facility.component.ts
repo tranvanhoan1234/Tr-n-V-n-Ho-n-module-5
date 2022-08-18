@@ -10,6 +10,11 @@ export class EditFacilityComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+ luandn(){
+
   }
 
 }

@@ -3,5 +3,10 @@
   position: fixed;
   z-index: 2000;
   width: 100%;
-  opacity: 0.5;
+  opacity: 0.4;
+}
+.nav-link{
+  color: black;
+  font-size:120% ;
+  font-weight: bold;
 }
