@@ -54,7 +54,7 @@
         <input class="form-control mt-2" placeholder="tuổi" required name="age"
                formControlName="age">
         <p style="color: red" *ngIf="formRegister.controls.age.hasError('required') && formRegister.touched">không được bỏ trống</p>
-        <p style="color: red" *ngIf="formRegister.controls.age.hasError('pattern') && formRegister.touched">Tuổi lớn hớn 18</p>
+        <p style="color: red" *ngIf="formRegister.controls.age.hasError('min') && formRegister.touched">Tuổi lớn hớn 18</p>
       </div>
       <br>
       <div class="row" name="gender" formControlName="gender">

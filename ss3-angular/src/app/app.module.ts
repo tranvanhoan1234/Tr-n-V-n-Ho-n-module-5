@@ -18,6 +18,7 @@ import { RatingBarComponent } from './exercise/rating-bar/rating-bar.component';
 import { CountdownTimeComponent } from './exercise/countdown-timer/countdown-time/countdown-time.component';
 import { RegisterComponent } from './exercise/registrationForm/register/register.component';
 import { LoginComponent } from './exercise/form-login/login/login.component';
+
 @NgModule({
   declarations: [
     AppComponent,

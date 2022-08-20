@@ -16,7 +16,6 @@ import {CreateFacilityComponent} from './facility/create-facility/create-facilit
 import {EditFacilityComponent} from './facility/edit-facility/edit-facility.component';
 import {ReactiveFormsModule} from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     AppComponent,
