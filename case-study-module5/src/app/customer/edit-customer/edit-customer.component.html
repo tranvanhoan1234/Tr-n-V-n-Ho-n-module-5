@@ -16,19 +16,27 @@
 
               <form class="px-md-2" [formGroup]="customerFrom" (ngSubmit)="updateCustomer(id)">
 
-                // id thì k dc chỉnh sửa // -> nguu .để type hidden, type test cc
-                <div class="form-outline mb-4">
+
+                <div hidden class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">id</label>
                   <input type="text" id="form3Example1q1" class="form-control" formControlName="id"/>
                 </div>
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1q">Name</
-                  label>
+                  <label class="form-label" for="form3Example1q">Name</label>
                   <input type="text" id="form3Example1q" class="form-control" formControlName="name">
+                  <p style="color: red" *ngIf="customerFrom.controls.name.hasError('required') && customerFrom.touched">
+                    * Không được bỏ
+                    trống</p>
+                  <p style="color: red" *ngIf="customerFrom.controls.name.hasError('pattern') && customerFrom.touched">
+                    * Tên không được chứa số,các kí tự đầu tiên phải viết hoa</p>
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">Date of birth</label>
                   <input type="date" id="form3Example1q2" class="form-control" formControlName="dateOfBirth">
+                  <p style="color: red"
+                     *ngIf="customerFrom.controls.dateOfBirth.hasError('required') && customerFrom.touched">* Không được
+                    bỏ
+                    trống</p>
                 </div>
                 <div>
                   <label class="form-label" for="form3Example1q">Gender</label>
@@ -43,25 +51,56 @@
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">Id card</label>
                   <input type="text" id="form3Example1q4" class="form-control" formControlName="cardNumber">
+                  <p style="color: red"
+                     *ngIf="customerFrom.controls.cardNumber.hasError('required') && customerFrom.touched">* Không được
+                    bỏ trống</p>
+                  <p style="color: red"
+                     *ngIf="customerFrom.controls.cardNumber.hasError('pattern') && customerFrom.touched">* Nhập số từ
+                    0-9</p>
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">Number phone</label>
                   <input type="text" id="form3Example1q5" class="form-control" formControlName="phoneNumber">
+                  <p style="color: red"
+                     *ngIf="customerFrom.controls.phoneNumber.hasError('required') && customerFrom.touched">* Không được
+                    bỏ
+                    trống</p>
+                  <p style="color: red"
+                     *ngIf="customerFrom.controls.phoneNumber.hasError('pattern') && customerFrom.touched">* Phải đúng
+                    định dạng 090xxxxxxx hoặc (84)+91xxxxxxx</p>
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">Email</label>
                   <input type="text" id="form3Example1q7" class="form-control" formControlName="email">
+                  <p style="color: red"
+                     *ngIf="customerFrom.controls.email.hasError('required') && customerFrom.touched">* Không được bỏ
+                    trống</p>
+                  <p style="color: red"
+                     *ngIf="customerFrom.controls.email.hasError('email') && customerFrom.touched">* Phải đúng định dạng
+                    email</p>
                 </div>
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1q">Type of guest</label>
-                  <input type="text" id="form3Example1q8" class="form-control" formControlName="guestType">
+                <div class="mb-3">
+                  <label class="form-label"> Type</label>
+
+                  <select id="customerType" formControlName="guestType" name="guestType" class="form-control">
+                    <option value="" disabled selected="selected">Please choose</option>
+                    <option *ngFor="let customerType of customerTypeList"
+                            [ngValue]="customerType">{{customerType.name}}</option>
+                  </select>
+                  <p style="color: red"
+                     *ngIf="customerFrom.controls.guestType.hasError('required') && customerFrom.touched">* Không được
+                    bỏ
+                    trống</p>
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">Address </label>
                   <input type="text" id="form3Example1q9" class="form-control" formControlName="address">
+                  <p style="color: red"
+                     *ngIf="customerFrom.controls.address.hasError('required') && customerFrom.touched">* Không được bỏ
+                    trống</p>
                 </div>
 
-                <button type="submit" class="btn btn-success btn-lg mb-1">Edit</button>
+                <button type="submit" class="btn btn-success btn-lg mb-1" [disabled]="!customerFrom.valid">Edit</button>
                 <a style="margin-left: 5px" type="submit" href=""
                    class="btn btn-success btn-lg mb-1">Close</a>
               </form>

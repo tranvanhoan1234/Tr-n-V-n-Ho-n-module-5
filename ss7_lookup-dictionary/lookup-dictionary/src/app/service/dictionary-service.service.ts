@@ -9,7 +9,6 @@ export class DictionaryServiceService {
     {word: 'friend', mean: 'bạn'},
     {word: 'dog', mean: 'chó'},
     {word: 'cat', mean: 'mèo'}]
-
   constructor() {
   }
   translate(){

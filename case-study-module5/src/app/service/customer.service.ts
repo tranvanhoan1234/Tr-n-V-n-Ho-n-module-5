@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Customer} from '../../module/customer';
+import {Customer} from '../module/customer';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +29,6 @@ export class CustomerService {
 
   constructor() {
   }
-
   getAll() {
     return this.customerList;
   }
@@ -50,7 +49,6 @@ export class CustomerService {
       }
     }
   }
-
   deleteProduct(id: number) {
     let index = this.customerList.findIndex(element => id = element.id);
     this.customerList.splice(index, 1);

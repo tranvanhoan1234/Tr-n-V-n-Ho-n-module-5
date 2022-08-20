@@ -1,12 +1,15 @@
+import {RentalType} from './rental-type';
+
 export interface Facility {
   idFacility?: number;
-  serviceName?:string;
-  usableArea?: string;
-  rentalCosts?: string;
-  maxNumberOfPeople?: string;
+  serviceName?: string;
+  usableArea?: number;
+  rentalCosts?: number;
+  maxNumberOfPeople?: number;
   roomStandard?: string;
+  rentalType?: RentalType;
   otherAmenitiesDescription?: string;
-  ofFloors?: string;
+  ofFloors?: number;
   freeServiceIncluded?: string;
   url?: string;
 

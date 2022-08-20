@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Customer} from '../../module/customer';
-import {CustomerService} from '../../service/service/customer.service';
+import {CustomerService} from '../../service/customer.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
 

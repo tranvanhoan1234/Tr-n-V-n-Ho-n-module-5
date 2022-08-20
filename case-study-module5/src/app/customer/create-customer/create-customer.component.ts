@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
-import {CustomerService} from '../../service/service/customer.service';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {CustomerService} from '../../service/customer.service';
 import {Router} from '@angular/router';
 import {CustomerType} from '../../module/customer-type';
 import {CustomerTypeService} from '../../service/customer-type.service';
+import {validate} from 'codelyzer/walkerFactory/walkerFn';
 
 @Component({
   selector: 'app-create-customer',
@@ -13,7 +14,6 @@ import {CustomerTypeService} from '../../service/customer-type.service';
 export class CreateCustomerComponent implements OnInit {
   customerForm: FormGroup;
   customerTypeList: CustomerType[] = [];
-
   constructor(private customerService: CustomerService,
               private router: Router,
               private customerTypeService: CustomerTypeService) {
@@ -21,19 +21,18 @@ export class CreateCustomerComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm();
-    this.customerTypeList=this.customerTypeService.getAll();
+    this.customerTypeList = this.customerTypeService.getAll();
   }
-
   createForm() {
     this.customerForm = new FormGroup({
-      name: new FormControl(),
-      dateOfBirth: new FormControl(),
-      gender: new FormControl(),
-      cardNumber: new FormControl(),
-      phoneNumber: new FormControl(),
-      email: new FormControl(),
-      guestType: new FormControl(),
-      address: new FormControl(),
+      name: new FormControl('', [Validators.required, Validators.pattern(/^([A-Z][^A-Z0-9\s]+)(\s[A-Z][^A-Z0-9\s]+)*$/)]),
+      dateOfBirth: new FormControl('', [Validators.required]),
+      gender: new FormControl('', [Validators.required]),
+      cardNumber: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]{9,12}$/)]),
+      phoneNumber: new FormControl('', [Validators.required, Validators.pattern(/^[\+84||09][0-9]{9,10}$/)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      guestType: new FormControl('', [Validators.required]),
+      address: new FormControl('', [Validators.required]),
     });
   }
 
