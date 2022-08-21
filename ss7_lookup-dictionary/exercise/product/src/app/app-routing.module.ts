@@ -7,10 +7,13 @@ import {ProductDeleteComponent} from "./product-delete/product-delete.component"
 
 
 const routes: Routes = [
-  {path: 'list', component: ProductListComponent},
-  {path: 'create', component: ProductCreateComponent},
-  {path: 'edit/:id', component: ProductEditComponent},
-  {path: 'delete/:id', component: ProductDeleteComponent}
+  {
+    path: 'product',
+    loadChildren: () => import('./product/product.module').then(module => module.ProductModule)
+  }, {
+    path: 'category',
+    loadChildren: () => import('./category/category.module').then(module => module.CategoryModule)
+  }
 ];
 
 @NgModule({

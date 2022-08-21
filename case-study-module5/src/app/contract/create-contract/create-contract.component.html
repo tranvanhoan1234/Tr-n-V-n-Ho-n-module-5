@@ -10,33 +10,58 @@
             <h3 style="text-align: center" class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"> Create Contract </h3>
 
           </div>
-<!--          <form class="px-md-2">-->
+          <form class="px-md-2" [formGroup]="contractForm" (ngSubmit)="submit()">
+            <div class="form-outline mb-4">
+              <select class="form-select" formControlName="facility" name="facility">
+                <option [defaultSelected]="contractForm" value="" disabled>Choose service</option>
+                <option *ngFor="let facility of facilityList"
+                        [ngValue]="facility.serviceName">{{facility.serviceName}}</option>
+              </select>
+
+            </div>
+            <div class="form-outline mb-4">
+              <select class="form-select" formControlName="customer" name="customer">
+                <option [defaultSelected]="contractForm" value="">--Choose customer--</option>
+                <option *ngFor="let customer of customerList" [ngValue]="customer.name">{{customer.name}}</option>
+              </select>
+            </div>
 
             <div class="form-outline mb-4">
-              <label class="form-label" for="form3Example1q">Some contracts</label>
-              <input type="text" id="form3Example1q" class="form-control"/>
+              <label class="form-label" for="form3Example1q1">Start day</label>
+              <input type="date" id="form3Example1q1" class="form-control" name="contractDate" formControlName="contractDate">
+                <p style="color: red"
+                   *ngIf="contractForm.controls.contractDate.hasError('checkDate')&& contractForm.touched">* Đúng đinh
+                  dạng dd/mm/yyyy</p>
+                <p style="color: red"
+                   *ngIf="contractForm.controls.contractDate.hasError('required') && contractForm.touched">* Không được
+                  bỏ trống</p>
             </div>
             <div class="form-outline mb-4">
-              <label class="form-label" for="form3Example1q">Start day</label>
-              <input type="email" id="form3Example1q2" class="form-control"/>
+              <label class="form-label" for="form3Example1q1">End date</label>
+              <input type="date" id="form3Example1q3" formControlName="contractEndDate" class="form-control"/>
+              <p style="color: red"
+                 *ngIf="contractForm.controls.contractEndDate.hasError('checkDate')&& contractForm.touched">* Đúng đinh
+                dạng dd/mm/yyyy</p>
+              <p style="color: red"
+                 *ngIf="contractForm.controls.contractEndDate.hasError('required') && contractForm.touched">* Không được
+                bỏ trống</p>
             </div>
             <div class="form-outline mb-4">
-              <label class="form-label" for="form3Example1q">End date</label>
-              <input type="date" id="form3Example1q3" class="form-control"/>
-            </div>
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form3Example1q">Advance deposit amount</label>
-              <input type="text" id="form3Example1q4" class="form-control"/>
-            </div>
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form3Example1q">Total payment amount</label>
-              <input type="text" id="form3Example1q5" class="form-control"/>
+              <label class="form-label" for="form3Example1q1">Deposit</label>
+              <input type="number" class="form-control" formControlName="deposits">
+              <p style="color: red"
+                 *ngIf="contractForm.controls.deposits.hasError('pattern') && contractForm.touched">* Số nguyên dương</p>
+              <p style="color: red"
+                 *ngIf="contractForm.controls.deposits.hasError('required') && contractForm.touched">* Không được
+                bỏ trống</p>
             </div>
             <div>
               <button type="submit" class="btn btn-success btn-lg mb-1">Create</button>
-              <button style="margin-left: 5px"href=""routerLink='/contract/list'  type="submit" class="btn btn-success btn-lg mb-1">Close</button>
+              <button style="margin-left: 5px" href="" routerLink='/contract/list' type="submit"
+                      class="btn btn-success btn-lg mb-1">Close
+              </button>
             </div>
-<!--          </form>-->
+          </form>
         </div>
       </div>
     </div>

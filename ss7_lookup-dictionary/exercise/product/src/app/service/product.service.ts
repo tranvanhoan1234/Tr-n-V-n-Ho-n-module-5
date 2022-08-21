@@ -16,20 +16,20 @@ export class ProductService {
       {id: 5, name: 'IPhone 11 Pro', price: 1895000, description: 'Like new'});
   }
 
-  getAll() {
+  getAll(): Product[] {
     return this.products
   }
 
-  saveProduct(product) {
+  saveProduct(product): void {
     this.products.push(product);
   }
 
-  findById(id: number) {
+  findById(id: number): object {
     return this.products.find(product => product.id === id)
 
   }
 
-  editProduct(id: number, product: Product) {
+  editProduct(id: number, product: Product): void {
     for (let i = 0; i < this.products.length; i++) {
       if (this.products[i].id === id) {
         this.products[i] = product;
@@ -37,8 +37,7 @@ export class ProductService {
       }
     }
   }
-
-  deleteProduct(id: number) {
+  deleteProduct(id: number): void {
     this.products = this.products.filter(product => {
       return product.id !== id;
     })

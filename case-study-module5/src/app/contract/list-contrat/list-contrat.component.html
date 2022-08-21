@@ -25,27 +25,20 @@
       <th> End date</th>
       <th> Deposit</th>
       <th> Accompanied service</th>
-
     </tr>
     </thead>
     <tbody>
     <tr style="text-align: center" *ngFor="let item of contract">
       <td>{{item.idContract}}</td>
-      <td>house</td>
+      <td>{{item.facility.serviceName}}</td>
       <td>{{item.customer.name}}</td>
       <td>{{item.contractDate}}</td>
       <td>{{item.contractEndDate}}</td>
       <td>{{item.deposits}}</td>
-      <!--      <td>Hose</td>-->
-      <!--      <td>Trần Văn Hoàn</td>-->
-      <!--      <td>12-1-2021</td>-->
-      <!--      <td>12-1-2022</td>-->
-      <!--      <td>10.0000</td>-->
       <td>
         <a class="btn btn-primary" href="#" role="button">+</a>
         <a class="btn btn-primary" href="#" role="button">List Of Included Services</a>
       </td>
-
     </tr>
     </tbody>
   </table>

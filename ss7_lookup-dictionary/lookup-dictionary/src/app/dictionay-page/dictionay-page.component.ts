@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {DictionaryServiceService} from "../service/dictionary-service.service";
-import {IWord} from "../mudules/i-word";
+import {DictionaryService} from "../service/dictionary-service";
+import {IWord} from "../models/i-word";
 
 @Component({
   selector: 'app-dictionay-page',
@@ -10,7 +10,7 @@ import {IWord} from "../mudules/i-word";
 export class DictionayPageComponent implements OnInit {
   wordForm: IWord[] = []
 
-  constructor(private dictionaryServiceService: DictionaryServiceService) {
+  constructor(private dictionaryServiceService: DictionaryService) {
   }
 
   ngOnInit(): void {

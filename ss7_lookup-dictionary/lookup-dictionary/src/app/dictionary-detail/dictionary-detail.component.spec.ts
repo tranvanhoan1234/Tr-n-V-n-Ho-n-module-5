@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DictionaryDetailComponent } from './dictionary-detail.component';
+import {DictionaryDetailComponent} from './dictionary-detail.component';
 
 describe('DictionaryDetailComponent', () => {
   let component: DictionaryDetailComponent;
@@ -8,9 +8,9 @@ describe('DictionaryDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DictionaryDetailComponent ]
+      declarations: [DictionaryDetailComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -13,8 +13,5 @@ export class EditFacilityComponent implements OnInit {
 
   }
 
- luandn(){
-
-  }
 
 }

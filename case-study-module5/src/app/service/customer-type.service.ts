@@ -15,7 +15,7 @@ export class CustomerTypeService {
   constructor() {
   }
 
-  getAll() {
+  getAll():CustomerType[] {
     return this.customerType;
   }
 }

@@ -14,7 +14,7 @@ export class FacilityRentalTypeService {
   constructor() {
   }
 
-  getAll() {
+  getAll() :object {
     return this.facilityRentalList;
   }
 }
