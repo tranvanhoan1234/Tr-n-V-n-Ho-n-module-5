@@ -2,6 +2,9 @@ import {Injectable} from '@angular/core';
 import {Facility} from '../module/facility';
 import {RentalType} from '../module/rental-type';
 import {FacilityRentalTypeService} from './facility-rental-type.service';
+import {FacilityType} from '../module/facility-type';
+import {FacilityTypeService} from './facility-type.service';
+import {Customer} from '../module/customer';
 
 @Injectable({
   providedIn: 'root'
@@ -37,13 +40,23 @@ export class FacilityService {
     ofFloors: 10, freeServiceIncluded: 'Kem trứng', url: 'https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/02/anh2.jpg'
   }];
 
-  constructor() {
-  }
+  constructor(){}
+
 
   getAll():Facility[] {
     return this.facilityList;
   }
-  saveFacility(facility):number {
+  saveFacility(facility) {
     return this.facilityList.push(facility)
+  }
+  findById(id: number) {
+    return this.facilityList.find(facility => facility.idFacility === id);
+  }
+  updateFacility(id: number, facility: Facility) {
+    for (let i = 0; i < this.facilityList.length; i++) {
+      if (this.facilityList[i].idFacility === id) {
+        this.facilityList[i] = facility;
+      }
+    }
   }
 }

@@ -5,10 +5,10 @@ import {FacilityType} from '../module/facility-type';
   providedIn: 'root'
 })
 export class FacilityTypeService {
-  facilityType: FacilityType[] = [];
+  facilityTypeList: FacilityType[] = [];
 
   constructor() {
-    this.facilityType.push({
+    this.facilityTypeList.push({
       id: 1,
       name: 'villa'
     }, {

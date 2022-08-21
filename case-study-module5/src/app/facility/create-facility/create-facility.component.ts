@@ -26,9 +26,8 @@ export class CreateFacilityComponent implements OnInit {
 
   ngOnInit(): void {
     this.saveFacility();
-    console.log(this.facilityForm);
     this.typeRental = this.typeRentalService.getAll();
-    this.facilityType = this.typeFacilityService.facilityType;
+    this.facilityType = this.typeFacilityService.facilityTypeList;
   }
 
   saveFacility() {

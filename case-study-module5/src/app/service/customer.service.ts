@@ -29,27 +29,27 @@ export class CustomerService {
 
   constructor() {
   }
-  getAll() :Customer[] {
+  getAll(){
     return this.customerList;
   }
 
-  saveCustomer(customer):void {
+  saveCustomer(customer) {
     this.customerList.push(customer);
 
   }
 
-  findById(id: number):object {
+  findById(id: number) {
     return this.customerList.find(customer => customer.id === id);
   }
 
-  updateCustomer(id: number, customer: Customer):any {
+  updateCustomer(id: number, customer: Customer) {
     for (let i = 0; i < this.customerList.length; i++) {
       if (this.customerList[i].id === id) {
         this.customerList[i] = customer;
       }
     }
   }
-  deleteProduct(id: number):void {
+  deleteProduct(id: number) {
     let index = this.customerList.findIndex(element => id = element.id);
     this.customerList.splice(index, 1);
   }

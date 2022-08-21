@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {RentalType} from '../module/rental-type';
+import {FacilityType} from '../module/facility-type';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class FacilityRentalTypeService {
   constructor() {
   }
 
-  getAll() :object {
+  getAll() :FacilityType[] {
     return this.facilityRentalList;
   }
 }

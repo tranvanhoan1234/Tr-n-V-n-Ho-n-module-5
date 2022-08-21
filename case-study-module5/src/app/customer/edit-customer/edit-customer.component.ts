@@ -16,7 +16,8 @@ export class EditCustomerComponent implements OnInit {
   id: number;
   customerTypeList: CustomerType[] = [];
 
-  constructor(private customerService: CustomerService,private customerType:CustomerTypeService,
+  constructor(private customerService: CustomerService,
+              private customerType:CustomerTypeService,
               private activatedRoute: ActivatedRoute, private router: Router) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
@@ -42,7 +43,6 @@ export class EditCustomerComponent implements OnInit {
   private getCustomer(id: number) {
     return this.customerService.findById(id);
   }
-
   updateCustomer(id: number) {
     const customer = this.customerFrom.value;
     console.log(this.customerFrom.value);
