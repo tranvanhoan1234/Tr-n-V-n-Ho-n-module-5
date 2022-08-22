@@ -17,7 +17,7 @@ export class DictionayPageComponent implements OnInit {
     this.translate()
   }
 
-  translate() {
+  translate() : any {
     this.wordForm = this.dictionaryServiceService.translate();
   }
 }

@@ -17,15 +17,15 @@ export class ProductListComponent implements OnInit {
     this.getAll();
   }
 
-  getAll() {
+  getAll() : void {
     this.product = this.productService.getAll();
   }
 
-  deleteProduct(item: Product) {
+  deleteProduct(item: Product) : any {
     this.deleteProducts = item;
   }
 
-  remove() {
+  remove() : void {
     this.productService.deleteProduct(this.deleteProducts.id)
     console.log(this.deleteProducts)
   }

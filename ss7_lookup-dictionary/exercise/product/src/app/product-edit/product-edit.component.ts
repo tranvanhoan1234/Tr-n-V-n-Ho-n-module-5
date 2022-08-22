@@ -29,10 +29,10 @@ export class ProductEditComponent implements OnInit {
     });
   }
 
-  ngOnInit():void {
+  ngOnInit() {
   }
 
-  edit() {
+  edit() :void{
     const product = this.productForm.value;
     this.productForm.reset();
     this.productService.editProduct(this.id, product);

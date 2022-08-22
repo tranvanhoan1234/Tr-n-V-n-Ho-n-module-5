@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {Product} from "../model/product";
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {ProductService} from "../service/product.service";
 
@@ -21,7 +20,7 @@ productForm:FormGroup;
 
   ngOnInit(): void {
   }
-submit(){
+submit() : void{
 const product=this.productForm.value;
 this.productService.saveProduct(product);
 this.productForm.reset();

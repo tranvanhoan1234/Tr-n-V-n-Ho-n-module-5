@@ -1,0 +1,15 @@
+<h1>Cập nhật thông tin danh mục sản phẩm</h1>
+<form [formGroup]="productForm" (ngSubmit)="updateCategory(id)">
+  <table>
+    <tr>
+      <td>Tên danh mục:</td>
+      <td><input type="text" formControlName="name"></td>
+      <td><input type="text" formControlName="price"></td>
+      <td><input type="text" formControlName="description"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button>Cập nhật</button></td>
+    </tr>
+  </table>
+</form>

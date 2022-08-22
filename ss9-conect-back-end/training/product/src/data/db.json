@@ -1,0 +1,22 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": {
+        "id": 2,
+        "name": "kẹo"
+      },
+      "price": 10000,
+      "description": "ngọt"
+    },
+    {
+      "id": 2,
+      "name": {
+        "id": 2,
+        "name": "chuột"
+      },
+      "price": 200000,
+      "description": "ngon"
+    }
+  ]
+}

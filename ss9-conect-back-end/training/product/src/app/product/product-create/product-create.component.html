@@ -1,0 +1,25 @@
+<div>
+  <h1>Tạo danh mục mới</h1>
+  <form [formGroup]="productForm" (ngSubmit)="submit()">
+    <table class="container">
+      <thead>
+      <tr>
+        <th>tên</th>
+        <th>giá</th>
+        <th>mô tả</th>
+        <th>tạo mới</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><input type="text" formControlName="name"></td>
+        <td><input type="text" formControlName="price"></td>
+        <td><input type="text" formControlName="description"></td>
+        <td>
+          <button>tạo mới </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
