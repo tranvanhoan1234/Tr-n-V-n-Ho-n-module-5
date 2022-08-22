@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {CustomerService} from '../../service/customer.service';
+import {CustomerService} from '../service/customer.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {CustomerTypeService} from '../../service/customer-type.service';
-import {CustomerType} from '../../module/customer-type';
+import {CustomerTypeService} from '../service/customer-type.service';
+import {CustomerType} from '../module/customer-type';
 
 
 @Component({
@@ -36,7 +36,7 @@ export class EditCustomerComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.customerTypeList = this.customerType.getAll();
   }
 
@@ -45,7 +45,6 @@ export class EditCustomerComponent implements OnInit {
   }
   updateCustomer(id: number) {
     const customer = this.customerFrom.value;
-    console.log(this.customerFrom.value);
     this.customerService.updateCustomer(id, customer);
     this.router.navigateByUrl('/customer/list').then(() => {
       setTimeout(() => {

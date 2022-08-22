@@ -50,10 +50,10 @@
               <label class="form-label" for="form3Example1q1">Deposit</label>
               <input type="number" class="form-control" formControlName="deposits">
               <p style="color: red"
-                 *ngIf="contractForm.controls.deposits.hasError('pattern') && contractForm.touched">* Số nguyên dương</p>
-              <p style="color: red"
                  *ngIf="contractForm.controls.deposits.hasError('required') && contractForm.touched">* Không được
                 bỏ trống</p>
+              <p style="color: red"
+                 *ngIf="contractForm.controls.deposits.hasError('pattern') && contractForm.touched">* Số nguyên dương</p>
             </div>
             <div>
               <button type="submit" class="btn btn-success btn-lg mb-1">Create</button>

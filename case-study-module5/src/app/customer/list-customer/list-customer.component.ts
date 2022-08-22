@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Customer} from '../../module/customer';
-import {CustomerService} from '../../service/customer.service';
+import {Customer} from '../module/customer';
+import {CustomerService} from '../service/customer.service';
 @Component({
   selector: 'app-list-customer',
   templateUrl: './list-customer.component.html',
@@ -13,7 +13,7 @@ export class ListCustomerComponent implements OnInit {
   constructor(private customerService: CustomerService) {
 
   }
-  ngOnInit(): void {
+  ngOnInit() {
     this.getAll();
   };
   getAll() {

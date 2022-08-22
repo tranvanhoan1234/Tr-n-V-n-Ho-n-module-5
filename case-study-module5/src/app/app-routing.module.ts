@@ -1,28 +1,22 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-import {ListFacilityComponent} from './facility/list-facility/list-facility.component';
-import {HomeListComponent} from './home/home-list/home-list.component';
-import {ListCustomerComponent} from './customer/list-customer/list-customer.component';
-import {CreateCustomerComponent} from './customer/create-customer/create-customer.component';
-import {EditCustomerComponent} from './customer/edit-customer/edit-customer.component';
-import {EditFacilityComponent} from './facility/edit-facility/edit-facility.component';
-import {CreateFacilityComponent} from './facility/create-facility/create-facility.component';
-import {ListContratComponent} from './contract/list-contrat/list-contrat.component';
-import {CreateContractComponent} from './contract/create-contract/create-contract.component';
+import {RouterModule, Routes} from '@angular/router';
 import {CommonModule} from '@angular/common';
+import {HomeListComponent} from './home/home-list/home-list.component';
 
-const routes: Routes = [
-  {path: '', component: HomeListComponent},
-  {path: 'customer/list', component: ListCustomerComponent},
-  {path: 'customer/create', component: CreateCustomerComponent},
-  {path: 'customer/edit', component: EditCustomerComponent},
-  {path: 'facility/list', component: ListFacilityComponent},
-  {path: 'facility/create', component: CreateFacilityComponent},
-  {path: 'facility/edit/:id', component: EditFacilityComponent},
-  {path: 'contract/list', component: ListContratComponent},
-  {path: 'contract/create', component: CreateContractComponent},
+const routes: Routes = [{
+  path: '',
+  component: HomeListComponent
+}, {
+  path: 'customer',
+  loadChildren: () => import('./customer/customer.module').then(customer => customer.CustomerModule)
+}, {
+  path: 'facility',
+  loadChildren: () => import('./facility/facility.module').then(facility => facility.FacilityModule)
+}, {
+  path: 'contract',
+  loadChildren: () => import('./contract/contract.module').then(contract => contract.ContractModule)
+}];
 
-];
 @NgModule({
   imports: [CommonModule,
     RouterModule.forRoot(routes)],

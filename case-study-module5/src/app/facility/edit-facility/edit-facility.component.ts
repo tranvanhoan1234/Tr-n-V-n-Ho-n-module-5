@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {FacilityService} from '../../service/facility.service';
-import {FacilityTypeService} from '../../service/facility-type.service';
-import {FacilityRentalTypeService} from '../../service/facility-rental-type.service';
+import {FacilityService} from '../service/facility.service';
+import {FacilityTypeService} from '../service/facility-type.service';
+import {FacilityRentalTypeService} from '../service/facility-rental-type.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {RentalType} from '../../module/rental-type';
-import {FacilityType} from '../../module/facility-type';
+import {RentalType} from '../module/rental-type';
+import {FacilityType} from '../module/facility-type';
 
 @Component({
   selector: 'app-edit-facility',

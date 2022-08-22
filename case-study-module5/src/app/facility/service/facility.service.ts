@@ -4,7 +4,7 @@ import {RentalType} from '../module/rental-type';
 import {FacilityRentalTypeService} from './facility-rental-type.service';
 import {FacilityType} from '../module/facility-type';
 import {FacilityTypeService} from './facility-type.service';
-import {Customer} from '../module/customer';
+import {Customer} from '../../customer/module/customer';
 
 @Injectable({
   providedIn: 'root'

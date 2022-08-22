@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {CustomerService} from '../../service/customer.service';
+import {CustomerService} from '../service/customer.service';
 import {Router} from '@angular/router';
-import {CustomerType} from '../../module/customer-type';
-import {CustomerTypeService} from '../../service/customer-type.service';
+import {CustomerType} from '../module/customer-type';
+import {CustomerTypeService} from '../service/customer-type.service';
 import {validate} from 'codelyzer/walkerFactory/walkerFn';
 import {checkDate} from '../../validate/check-date';
 
@@ -34,11 +34,13 @@ export class CreateCustomerComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       guestType: new FormControl('', [Validators.required]),
       address: new FormControl('', [Validators.required]),
+
     });
   }
 
   submit() {
     const customer = this.customerForm.value;
+    console.log(this.customerForm);
     this.customerService.saveCustomer(customer);
     this.customerForm.reset();
     this.router.navigateByUrl('/customer/list').then(() => {

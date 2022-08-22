@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {Contract} from '../module/contract';
-import {Customer} from '../module/customer';
-import {Facility} from '../module/facility';
-import {CustomerService} from './customer.service';
-import {FacilityService} from './facility.service';
+import {Customer} from '../../customer/module/customer';
+import {Facility} from '../../facility/module/facility';
+import {CustomerService} from '../../customer/service/customer.service';
+import {FacilityService} from '../../facility/service/facility.service';
 
 
 @Injectable({
