@@ -28,6 +28,9 @@
                   <input type="date" id="form3Example1q2" class="form-control" formControlName="dateOfBirth">
                   <p style="color: red" *ngIf="customerForm.controls.dateOfBirth.hasError('required') && customerForm.touched">* Không được bỏ
                     trống</p>
+                  <p style="color: red"
+                     *ngIf="customerForm.controls.dateOfBirth.hasError('checkDate')&& customerForm.touched">* Đúng đinh
+                    dạng dd/mm/yyyy</p>
                 </div>
                 <div>
                   <label class="form-label" for="form3Example1q">Gender</label>

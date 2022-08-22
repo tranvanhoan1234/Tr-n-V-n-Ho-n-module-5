@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {CustomerType} from '../../module/customer-type';
 import {CustomerTypeService} from '../../service/customer-type.service';
 import {validate} from 'codelyzer/walkerFactory/walkerFn';
+import {checkDate} from '../../validate/check-date';
 
 @Component({
   selector: 'app-create-customer',
@@ -26,7 +27,7 @@ export class CreateCustomerComponent implements OnInit {
   createForm() {
     this.customerForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.pattern(/^([A-Z][^A-Z0-9\s]+)(\s[A-Z][^A-Z0-9\s]+)*$/)]),
-      dateOfBirth: new FormControl('', [Validators.required]),
+      dateOfBirth: new FormControl('', [Validators.required,checkDate]),
       gender: new FormControl('', [Validators.required]),
       cardNumber: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]{9,12}$/)]),
       phoneNumber: new FormControl('', [Validators.required, Validators.pattern(/^[\+84||09][0-9]{9,10}$/)]),

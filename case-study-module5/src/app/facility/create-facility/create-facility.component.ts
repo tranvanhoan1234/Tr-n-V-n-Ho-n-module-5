@@ -17,7 +17,6 @@ export class CreateFacilityComponent implements OnInit {
   typeRental: RentalType[] = [];
   facilityType: FacilityType[] = [];
   typeValue = '0:1';
-
   constructor(private facilityService: FacilityService,
               private typeRentalService: FacilityRentalTypeService,
               private typeFacilityService: FacilityTypeService,
@@ -29,7 +28,6 @@ export class CreateFacilityComponent implements OnInit {
     this.typeRental = this.typeRentalService.getAll();
     this.facilityType = this.typeFacilityService.facilityTypeList;
   }
-
   saveFacility() {
     this.facilityForm = new FormGroup({
       serviceName: new FormControl('', [Validators.required]),
@@ -38,15 +36,17 @@ export class CreateFacilityComponent implements OnInit {
       maxNumberOfPeople: new FormControl('', [Validators.required]),
       typeRental: new FormControl('', [Validators.required]),
       roomStandard: new FormControl('', [Validators.required]),
-      poolArea: new FormControl('', [Validators.required]),
+      poolArea: new FormControl('', [Validators.required,Validators.pattern('^\\d*[1-9]\\d*$')]),
       otherAmenitiesDescription: new FormControl('', [Validators.required]),
-      ofFloors: new FormControl('', [Validators.required]),
+      ofFloors: new FormControl('', [Validators.required,Validators.pattern('^\\d*[1-9]\\d*$')]),
       freeServiceIncluded: new FormControl('', [Validators.required]),
     });
+    console.log(this.facilityForm);
   }
 
   submit() {
     const facility = this.facilityForm.value;
+    console.log(facility)
     this.facilityService.saveFacility(facility);
     this.facilityForm.reset();
     this.router.navigateByUrl('/facility/list').then(() => {

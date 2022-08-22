@@ -1,8 +1,5 @@
 <div>
   <section class="h-100 h-custom">
-    <div class="card bg-dark text-white">
-      <img src="../../case-study-module5/src/app/img/banner01.jpg" alt="">
-    </div>
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-lg-8 col-xl-6">
@@ -16,7 +13,7 @@
               <form class="px-md-2" [formGroup]="facilityForm" (ngSubmit)="updateCustomer(id)">
                 <div hidden class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">id</label>
-                  <input type="text" id="form3Example1q1" class="form-control" name="idFacility" formControlName="idFaci  lity"/>
+                  <input type="text" id="form3Example1q1" class="form-control" name="id" formControlName="id"/>
                 </div>
                 <div>
                   <label class="form-label" for="form3Example1q">Service name</label>
@@ -105,7 +102,7 @@
                   <!--                    * Không được bỏ trống</p>-->
                 </div>
 
-                <button type="submit" class="btn btn-success btn-lg mb-1">create</button>
+                <button type="submit" class="btn btn-success btn-lg mb-1">Edit</button>
                 <a style="margin-left: 5px" href="" type="submit"
                    class="btn btn-success btn-lg mb-1">Close</a>
               </form>

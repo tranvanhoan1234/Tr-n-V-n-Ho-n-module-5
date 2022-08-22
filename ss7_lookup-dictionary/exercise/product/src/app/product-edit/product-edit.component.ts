@@ -36,6 +36,6 @@ export class ProductEditComponent implements OnInit {
     const product = this.productForm.value;
     this.productForm.reset();
     this.productService.editProduct(this.id, product);
-    this.router.navigateByUrl('/list');
+    this.router.navigateByUrl('/product/list');
   }
 }

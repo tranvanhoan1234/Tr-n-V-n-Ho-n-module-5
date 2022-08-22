@@ -26,9 +26,7 @@ export class ProductService {
 
   findById(id: number): object {
     return this.products.find(product => product.id === id)
-
   }
-
   editProduct(id: number, product: Product): void {
     for (let i = 0; i < this.products.length; i++) {
       if (this.products[i].id === id) {

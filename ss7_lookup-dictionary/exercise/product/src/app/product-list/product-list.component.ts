@@ -9,10 +9,10 @@ import {ProductService} from "../service/product.service";
 })
 export class ProductListComponent implements OnInit {
   product: Product[] = [];
+  deleteProducts: Product;
 
   constructor(private productService: ProductService) {
   }
-
   ngOnInit(): void {
     this.getAll();
   }
@@ -21,4 +21,12 @@ export class ProductListComponent implements OnInit {
     this.product = this.productService.getAll();
   }
 
+  deleteProduct(item: Product) {
+    this.deleteProducts = item;
+  }
+
+  remove() {
+    this.productService.deleteProduct(this.deleteProducts.id)
+    console.log(this.deleteProducts)
+  }
 }

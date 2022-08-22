@@ -1,4 +1,4 @@
-<h1>Danh sách sản phẩm</h1>
+ <div><h1>Danh sách sản phẩm</h1>
 <table>
   <tr>
     <td>STT</td>
@@ -8,16 +8,56 @@
     <td>Edit</td>
     <td>Delete</td>
   </tr>
-  <tr *ngFor="let item of product; index as i">
+  <tr *ngFor="let item of product;let i =index">
     <td>{{i +1}}</td>
     <td>{{item.name}}</td>
     <td>{{item.price}}</td>
     <td>{{item.description}}</td>
     <td>
-<!--      <button [routerLink]="['/edit',item.id]">Edit</button>-->
+      <button [routerLink]="['/product/edit',item.id]">Edit</button>
     </td>
     <td>
-<!--      <button [routerLink]="['/delete',item.id]">Delete</button>-->
+      <!-- Button trigger modal -->
+      <div>
+        <button class="btn btn-outline-danger" data-bs-toggle="modal"
+                data-bs-target="#exampleModal" (click)="deleteProduct(item)">
+          Delete
+        </button>
+      </div>
     </td>
   </tr>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Delete Customer</h5>
+
+          <button type="button" class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+        </div>
+        <!--                            delete moda-->
+        <div class="modal-body">
+<!--                          <form class="px-md-2" >-->
+
+          <div class="form-outline mb-4">
+            <p>are you sure you want to delete customer with id : </p>
+            <label class="form-label">....</label>
+          </div>
+          <div class="form-outline mb-4">
+            <p>end name with : </p>
+            <label class="form-label" *ngIf="deleteProducts">{{deleteProducts.name}}</label>
+          </div>
+<!--                          </form>-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" (click)="remove()">Delete</button>
+          <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </table>
+ </div>

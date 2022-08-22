@@ -28,7 +28,7 @@ export class EditFacilityComponent implements OnInit {
       this.id = +paramMap.get('id');
       const facility = this.getFacility(this.id);
       this.facilityForm = new FormGroup({
-        idFacility: new FormControl(facility.idFacility),
+        id: new FormControl(facility.id),
         serviceName: new FormControl(facility.serviceName),
         usableArea: new FormControl(facility.usableArea),
         rentalCosts: new FormControl(facility.rentalCosts),
@@ -46,16 +46,13 @@ export class EditFacilityComponent implements OnInit {
   ngOnInit(): void {
     this.facilityRenType = this.facilityRenTypeService.getAll();
     this.facilityTypeName = this.facilityTypeService.facilityTypeList;
-
   }
-
   private getFacility(id: number) {
     return this.facilityService.findById(id);
   }
-
   updateCustomer(id: number) {
     const facility = this.facilityForm.value;
-    this.facilityService.updateFacility(id,facility);
+    this.facilityService.updateFacility(id, facility);
     this.facilityForm.reset();
     this.router.navigateByUrl('/facility/list').then(() => {
       setTimeout(() => {
@@ -63,7 +60,6 @@ export class EditFacilityComponent implements OnInit {
       }, 200);
     });
   }
-
   setFacility(event) {
     this.typeValue = event.target.value;
     console.log(event);
@@ -73,5 +69,4 @@ export class EditFacilityComponent implements OnInit {
     } else if (this.typeValue === '3') {
     }
   }
-
 }
