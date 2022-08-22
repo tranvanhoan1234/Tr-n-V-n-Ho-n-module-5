@@ -1,0 +1,10 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "chuối tây",
+      "price": "10000",
+      "description": "thơm ngon"
+    }
+  ]
+}

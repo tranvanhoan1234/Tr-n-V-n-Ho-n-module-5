@@ -29,16 +29,16 @@ export class EditFacilityComponent implements OnInit {
       const facility = this.getFacility(this.id);
       this.facilityForm = new FormGroup({
         id: new FormControl(facility.id),
-        serviceName: new FormControl(facility.serviceName),
-        usableArea: new FormControl(facility.usableArea),
-        rentalCosts: new FormControl(facility.rentalCosts),
-        maxNumberOfPeople: new FormControl(facility.maxNumberOfPeople),
-        typeRental: new FormControl(facility.rentalType),
-        roomStandard: new FormControl(facility.roomStandard),
-        poolArea: new FormControl(facility.poolArea),
-        otherAmenitiesDescription: new FormControl(facility.otherAmenitiesDescription),
-        ofFloors: new FormControl(facility.ofFloors),
-        freeServiceIncluded: new FormControl(facility.freeServiceIncluded),
+        serviceName: new FormControl(facility.serviceName, [Validators.required]),
+        usableArea: new FormControl(facility.usableArea, [Validators.required]),
+        rentalCosts: new FormControl(facility.rentalCosts, [Validators.required]),
+        maxNumberOfPeople: new FormControl(facility.maxNumberOfPeople, [Validators.required]),
+        typeRental: new FormControl(facility.rentalType, [Validators.required]),
+        roomStandard: new FormControl(facility.roomStandard, [Validators.required]),
+        poolArea: new FormControl(facility.poolArea, [Validators.required,Validators.pattern('^\\d*[1-9]\\d*$')]),
+        otherAmenitiesDescription: new FormControl(facility.otherAmenitiesDescription, [Validators.required]),
+        ofFloors: new FormControl(facility.ofFloors, [Validators.required,Validators.pattern('^\\d*[1-9]\\d*$')]),
+        freeServiceIncluded: new FormControl(facility.freeServiceIncluded, [Validators.required]),
       });
     });
   }
