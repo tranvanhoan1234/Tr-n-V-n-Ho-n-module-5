@@ -9,9 +9,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
 import {ProductCreateComponent} from './product/product-create/product-create.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
-import { CategoryListComponent } from './category/category-list/category-list.component';
 import { CategoryCreateComponent } from './category/category-create/category-create.component';
 import { CategoryEditComponent } from './category/category-edit/category-edit.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -20,7 +20,6 @@ import { CategoryEditComponent } from './category/category-edit/category-edit.co
     CategoryComponent,
     ProductCreateComponent,
     ProductEditComponent,
-    CategoryListComponent,
     CategoryCreateComponent,
     CategoryEditComponent
   ],
@@ -28,7 +27,8 @@ import { CategoryEditComponent } from './category/category-edit/category-edit.co
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
