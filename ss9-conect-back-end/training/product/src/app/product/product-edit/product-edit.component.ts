@@ -19,16 +19,14 @@ export class ProductEditComponent implements OnInit {
       this.getProduct(this.id);
     });
   }
-
   ngOnInit(): void {
   }
-
   private getProduct(id: number) {
-    return this.productService.findById(id).subscribe(category => {
+    return this.productService.findById(id).subscribe(product => {
       this.productForm = new FormGroup({
-        name: new FormControl(category.name),
-        price: new FormControl(category.price),
-        description: new FormControl(category.description),
+        name: new FormControl(product.name),
+        price: new FormControl(product.price),
+        description: new FormControl(product.description),
       });
     });
   }
