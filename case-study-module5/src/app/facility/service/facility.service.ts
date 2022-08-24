@@ -1,23 +1,23 @@
 import {Injectable} from '@angular/core';
 import {Facility} from '../module/facility';
-import {RentalType} from '../module/rental-type';
-import {FacilityRentalTypeService} from './facility-rental-type.service';
-import {FacilityType} from '../module/facility-type';
-import {FacilityTypeService} from './facility-type.service';
-import {Customer} from '../../customer/module/customer';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {environment} from '../../../environments/environment';
+
+const URL_API = `${environment.apiUrl}`;
 
 @Injectable({
   providedIn: 'root'
 })
 export class FacilityService {
+  private Facility_API = 'http://localhost:3000/facility';
   facilityList: Facility[] = [{
-
     id: 1,
     serviceName: 'House',
     usableArea: 10000,
     rentalCosts: 10000000,
     maxNumberOfPeople: 20,
-    rentalType:{id:1,name:'năm'},
+    rentalType: {id: 1, name: 'năm'},
     roomStandard: '5 sao',
     otherAmenitiesDescription: 'gym ',
     ofFloors: 10,
@@ -29,34 +29,37 @@ export class FacilityService {
     usableArea: 20000,
     rentalCosts: 20.000000
     , maxNumberOfPeople: 20,
-    rentalType:{id:2,name:'tháng'},
+    rentalType: {id: 2, name: 'tháng'},
     roomStandard: '3 sao',
     otherAmenitiesDescription: 'xông hơi ',
     ofFloors: 10,
     freeServiceIncluded: 'Kem trứng', url: 'https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/02/anh2.jpg'
   }, {
     id: 3, serviceName: 'Room  ', usableArea: 40000, rentalCosts: 40000000
-    , maxNumberOfPeople: 20,   rentalType:{id:3,name:'ngày'},roomStandard: '3 sao', otherAmenitiesDescription: 'xông hơi ',
+    , maxNumberOfPeople: 20, rentalType: {id: 3, name: 'ngày'}, roomStandard: '3 sao', otherAmenitiesDescription: 'xông hơi ',
     ofFloors: 10, freeServiceIncluded: 'Kem trứng', url: 'https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/02/anh2.jpg'
   }];
 
-  constructor(){}
-
-
-  getAll():Facility[] {
-    return this.facilityList;
+  constructor(private httpClient: HttpClient) {
   }
+
+  getAll(): Observable<Facility[]> {
+    return this.httpClient.get<Facility[]>(this.Facility_API + '/');
+  }
+
   saveFacility(facility) {
-    return this.facilityList.push(facility)
+    return this.httpClient.post<Facility>(this.Facility_API + '/', facility);
   }
-  findById(id: number) {
-    return this.facilityList.find(facility => facility.id === id);
+
+  findById(id: number): Observable<Facility> {
+    return this.httpClient.get<Facility>(this.Facility_API + '/' + id);
   }
-  updateFacility(id: number, facility: Facility) {
-    for (let i = 0; i < this.facilityList.length; i++) {
-      if (this.facilityList[i].id === id) {
-        this.facilityList[i] = facility;
-      }
-    }
+
+  updateFacility(id: number, facility: Facility): Observable<Facility> {
+    return this.httpClient.put<Facility>(this.Facility_API + '/' + id, facility);
+  }
+
+  deleteFacility(id: number): Observable<Facility> {
+    return this.httpClient.delete<Facility>(this.Facility_API + '/' + id);
   }
 }

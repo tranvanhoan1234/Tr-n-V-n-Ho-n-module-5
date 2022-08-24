@@ -20,10 +20,9 @@ export class ContractService {
 
   constructor(private customerService: CustomerService,
               private facilityService: FacilityService) {
-    this.customerList = this.customerService.getAll();
-    this.facilityList = this.facilityService.getAll();
+    // this.customerList = this.customerService.getAll();
+    // this.facilityList = this.facilityService.getAll();
   }
-
   getAll(): Contract[] {
     return this.contractList;
   }

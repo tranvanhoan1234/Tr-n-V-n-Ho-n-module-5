@@ -1,0 +1,143 @@
+{
+  "customer": [
+    {
+      "name": "Trần Văn Hoàng",
+      "dateOfBirth": "2022-08-12",
+      "gender": "1",
+      "cardNumber": "34512364612",
+      "phoneNumber": "0900374623",
+      "email": "keongot@gmail.com",
+      "customerType": "Platinium",
+      "address": "dn",
+      "id": 1
+    },
+    {
+      "name": "Trần Văn Hoàn",
+      "dateOfBirth": "2022-08-19",
+      "gender": "lgbt",
+      "cardNumber": "1231231123",
+      "phoneNumber": "0900374623",
+      "email": "keongot@gmail.com",
+      "customerType": "Diamond",
+      "address": "HÀ NỘI",
+      "id": 2
+    }
+  ],
+  "customerType": [
+    {
+      "id": "1",
+      "name": "Diamond"
+    },
+    {
+      "id": "2",
+      "name": "Platinium"
+    },
+    {
+      "id": "3",
+      "name": "Gold"
+    },
+    {
+      "id": "4",
+      "name": "Silver"
+    },
+    {
+      "id": "5",
+      "name": "Member"
+    }
+  ],
+  "facility": [
+    {
+      "id": 1,
+      "serviceName": 1,
+      "usableArea": "50000",
+      "rentalCosts": 10000000,
+      "maxNumberOfPeople": 20,
+      "typeRental": {
+        "name": "năm"
+      },
+      "roomStandard": "5 sao",
+      "poolArea": "234",
+      "otherAmenitiesDescription": "gym ",
+      "ofFloors": 10,
+      "freeServiceIncluded": "kem trứng trộn"
+    },
+    {
+      "serviceName": 2,
+      "usableArea": "900000",
+      "rentalCosts": 20,
+      "maxNumberOfPeople": 20,
+      "typeRental": "[object Object]",
+      "roomStandard": "3 sao",
+      "poolArea": "23",
+      "otherAmenitiesDescription": "xông hơi ",
+      "ofFloors": 10,
+      "url": "",
+      "freeServiceIncluded": "kem trứng",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "serviceName": "Room",
+      "usableArea": 40000,
+      "rentalCosts": 40000000,
+      "maxNumberOfPeople": 20,
+      "rentalType": {
+        "name": "ngày"
+      },
+      "roomStandard": "3 sao",
+      "otherAmenitiesDescription": "xông hơi",
+      "ofFloors": 10,
+      "freeServiceIncluded": "Kem trứng",
+      "url": "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/02/anh2.jpg"
+    },
+    {
+      "serviceName": 3,
+      "usableArea": "234",
+      "rentalCosts": "123",
+      "maxNumberOfPeople": "234",
+      "typeRental": {
+        "id": 3,
+        "name": "ngày"
+      },
+      "roomStandard": "1211",
+      "poolArea": "4234",
+      "otherAmenitiesDescription": "234",
+      "ofFloors": "23",
+      "url": "https://img.vn/",
+      "freeServiceIncluded": "123",
+      "id": 4
+    }
+  ],
+  "rentalType": [
+    {
+      "id": 1,
+      "name": "năm"
+    },
+    {
+      "id": 2,
+      "name": "tháng"
+    },
+    {
+      "id": 3,
+      "name": "ngày"
+    },
+    {
+      "id": 4,
+      "name": "gio"
+    }
+  ],
+  "facilityType": [
+    {
+      "id": 1,
+      "name": "villa"
+    },
+    {
+      "id": 2,
+      "name": "house"
+    },
+    {
+      "id": 3,
+      "name": "room"
+    }
+  ]
+}

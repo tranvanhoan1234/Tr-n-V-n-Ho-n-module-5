@@ -13,6 +13,7 @@
               <h3 style="text-align: center" class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"> Create Facility </h3>
 
               <form class="px-md-2" [formGroup]="facilityForm" (ngSubmit)="submit()">
+
                 <div>
                   <label class="form-label" for="form3Example1q">Service name</label>
                   <select (change)="setFacility($event)" class="form-select" id="form3Example1q" name="serviceName"
@@ -100,6 +101,11 @@
                      *ngIf="facilityForm.controls.poolArea.hasError('pattern') && facilityForm.touched">
                     * Hồ bơi phải là nguyên dương</p>
                 </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q">Url </label>
+                  <input type="text" id="form3Example1q12" class="form-control"
+                         formControlName="url" name="url">
+                </div>
                 <div class="form-outline mb-4" [hidden]="typeValue === '0: 1' || typeValue === '1: 2'">
                   <label class="form-label" for="form3Example1q">free service </label>
                   <input type="text" id="form3Example1q9" class="form-control" name="freeServiceIncluded"
@@ -109,7 +115,7 @@
                     * Không được bỏ trống</p>
                 </div>
 
-                <button type="submit" class="btn btn-success btn-lg mb-1" [disabled]="facilityForm.valid">create</button>
+                <button type="submit" class="btn btn-success btn-lg mb-1" [disabled]="!facilityForm.valid">create</button>
                 <a style="margin-left: 5px" href="" type="submit" (click)="saveFacility()"
                    class="btn btn-success btn-lg mb-1">Close</a>
 

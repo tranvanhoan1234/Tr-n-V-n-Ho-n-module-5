@@ -13,14 +13,8 @@
                  alt="Sample photo">
             <div class="card-body p-4 p-md-5">
               <h3 style="text-align: center" class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"> Edit Customer </h3>
-
               <form class="px-md-2" [formGroup]="customerFrom" (ngSubmit)="updateCustomer(id)">
 
-
-                <div hidden class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1q">id</label>
-                  <input type="text" id="form3Example1q1" class="form-control" formControlName="id"/>
-                </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">Name</label>
                   <input type="text" id="form3Example1q" class="form-control" formControlName="name">
@@ -37,14 +31,17 @@
                      *ngIf="customerFrom.controls.dateOfBirth.hasError('required') && customerFrom.touched">* Không được
                     bỏ
                     trống</p>
+                  <p style="color: red"
+                     *ngIf="customerFrom.controls.dateOfBirth.hasError('pattern')&& customerFrom.touched">* Đúng đinh
+                    dạng dd/mm/yyyy</p>
                 </div>
                 <div>
                   <label class="form-label" for="form3Example1q">Gender</label>
                   <br>
                   <select class="form-select" id="form3Example1q3" formControlName="gender">
-                    <option value="Male">Male</option>
-                    <option value="female">female</option>
-                    <option value="lgbt">lgbt</option>
+                    <option  value="1">Male</option>
+                    <option value="2">female</option>
+                    <option value="3">lgbt</option>
                   </select>
                 </div>
                 <br>
@@ -82,13 +79,13 @@
                 <div class="mb-3">
                   <label class="form-label"> Type</label>
 
-                  <select id="customerType" formControlName="guestType" name="guestType" class="form-control">
+                  <select id="customerType" formControlName="customerType" name="customerType" class="form-control">
                     <option value="" disabled selected="selected">Please choose</option>
                     <option *ngFor="let customerType of customerTypeList"
-                            [ngValue]="customerType">{{customerType.name}}</option>
+                            [value]="customerType.name">{{customerType.name}}</option>
                   </select>
                   <p style="color: red"
-                     *ngIf="customerFrom.controls.guestType.hasError('required') && customerFrom.touched">* Không được
+                     *ngIf="customerFrom.controls.customerType.hasError('required') && customerFrom.touched">* Không được
                     bỏ
                     trống</p>
                 </div>
@@ -101,7 +98,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-success btn-lg mb-1" [disabled]="!customerFrom.valid">Edit</button>
-                <a style="margin-left: 5px" type="submit" href=""
+                <a style="margin-left: 5px" type="submit" href="" routerLink="/customer/list"
                    class="btn btn-success btn-lg mb-1">Close</a>
               </form>
 

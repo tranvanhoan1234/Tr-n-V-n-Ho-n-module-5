@@ -17,6 +17,8 @@ export class CreateFacilityComponent implements OnInit {
   typeRental: RentalType[] = [];
   facilityType: FacilityType[] = [];
   typeValue = '0:1';
+  id: number;
+
   constructor(private facilityService: FacilityService,
               private typeRentalService: FacilityRentalTypeService,
               private typeFacilityService: FacilityTypeService,
@@ -25,9 +27,10 @@ export class CreateFacilityComponent implements OnInit {
 
   ngOnInit(): void {
     this.saveFacility();
-    this.typeRental = this.typeRentalService.getAll();
-    this.facilityType = this.typeFacilityService.facilityTypeList;
+    this.getAllRenType();
+    this.getAllType();
   }
+
   saveFacility() {
     this.facilityForm = new FormGroup({
       serviceName: new FormControl('', [Validators.required]),
@@ -36,9 +39,10 @@ export class CreateFacilityComponent implements OnInit {
       maxNumberOfPeople: new FormControl('', [Validators.required]),
       typeRental: new FormControl('', [Validators.required]),
       roomStandard: new FormControl('', [Validators.required]),
-      poolArea: new FormControl('', [Validators.required,Validators.pattern('^\\d*[1-9]\\d*$')]),
+      poolArea: new FormControl('', [Validators.required, Validators.pattern('^\\d*[1-9]\\d*$')]),
       otherAmenitiesDescription: new FormControl('', [Validators.required]),
-      ofFloors: new FormControl('', [Validators.required,Validators.pattern('^\\d*[1-9]\\d*$')]),
+      ofFloors: new FormControl('', [Validators.required, Validators.pattern('^\\d*[1-9]\\d*$')]),
+      url: new FormControl(''),
       freeServiceIncluded: new FormControl('', [Validators.required]),
     });
     console.log(this.facilityForm);
@@ -46,12 +50,11 @@ export class CreateFacilityComponent implements OnInit {
 
   submit() {
     const facility = this.facilityForm.value;
-    console.log(facility)
-    this.facilityService.saveFacility(facility);
-    this.facilityForm.reset();
-    this.router.navigateByUrl('/facility/list').then(() => {
+    this.facilityService.saveFacility(facility).subscribe(() => {
+      this.facilityForm.reset();
+      this.router.navigate(['/facility/list']);
       setTimeout(() => {
-        alert('Them moi thanh cong!');
+        alert('Thêm mới thành công!');
       }, 200);
     });
   }
@@ -69,6 +72,18 @@ export class CreateFacilityComponent implements OnInit {
       this.facilityForm.patchValue({otherAmenitiesDescription: NaN});
       this.facilityForm.patchValue({roomStandard: NaN});
     }
+  }
+
+  getAllType() {
+    this.typeFacilityService.getAll().subscribe(value => {
+      this.facilityType = value;
+    });
+  }
+
+  getAllRenType() {
+    this.typeRentalService.getAll().subscribe(value => {
+      this.typeRental = value;
+    });
   }
 }
 

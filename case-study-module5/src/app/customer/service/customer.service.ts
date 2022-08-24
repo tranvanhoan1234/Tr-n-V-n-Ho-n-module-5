@@ -1,56 +1,36 @@
 import {Injectable} from '@angular/core';
 import {Customer} from '../module/customer';
+import {environment} from '../../../environments/environment';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
+const URL_API =`${environment.apiUrl}`;
 @Injectable({
   providedIn: 'root'
-})
+ })
 export class CustomerService {
-  customerList: Customer[] = [{
-    id: 1,
-    name: 'Trần Văn Hoàn',
-    dateOfBirth: '12/3/1993',
-    gender: 'nam',
-    cardNumber: '34512364612',
-    phoneNumber: '012374623',
-    email: 'keongot@gmail.com',
-    guestType: {id: 1, name: 'Diamond'},
-    address: 'dn',
-  }, {
-    id: 2,
-    name: 'Trần Văn Toàn',
-    dateOfBirth: '12/3/1999',
-    gender: 'nam',
-    cardNumber: '1235342354',
-    phoneNumber: '079374623',
-    email: 'keochuangot@gmail.com',
-    guestType: {id: 2, name: 'Platinium'},
-    address: 'hà nội ',
-  }];
 
-  constructor() {
+  constructor(private httpClient:HttpClient) {
   }
-  getAll(){
-    return this.customerList;
+  getAll(): Observable<Customer[]> {
+    return this.httpClient
+      .get<Customer[]>(URL_API + '/customer');
+  }
+  saveCustomer(customer){
+    return this.httpClient.post<Customer>(URL_API + '/customer', customer);
   }
 
-  saveCustomer(customer) {
-    this.customerList.push(customer);
-
+  findById(id: number): Observable<Customer> {
+    return this.httpClient.get<Customer>(`${URL_API}/customer/${id}`);
+    // return this.httpClient.get<Customer>(URL_API + '/customer/' + id);
   }
 
-  findById(id: number) {
-    return this.customerList.find(customer => customer.id === id);
+  updateCustomer(id: number, customer: Customer): Observable<Customer>   {
+    return this.httpClient.put<Customer>(`${URL_API}/customer/${id}`, customer);
   }
 
-  updateCustomer(id: number, customer: Customer) {
-    for (let i = 0; i < this.customerList.length; i++) {
-      if (this.customerList[i].id === id) {
-        this.customerList[i] = customer;
-      }
-    }
+  deleteCustomer(id: number): Observable<Customer> {
+    return this.httpClient.delete<Customer>(`${URL_API}/customer/${id}`);
   }
-  deleteProduct(id: number) {
-    let index = this.customerList.findIndex(element => id = element.id);
-    this.customerList.splice(index, 1);
-  }
+
 }

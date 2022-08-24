@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Contract} from '../module/contract';
 import {ContractService} from '../service/contract.service';
-
-
 @Component({
   selector: 'app-list-contrat',
   templateUrl: './list-contrat.component.html',
@@ -15,5 +13,4 @@ export class ListContratComponent implements OnInit {
   ngOnInit(): void {
     this.contract = this.contractService.getAll();
   }
-
 }

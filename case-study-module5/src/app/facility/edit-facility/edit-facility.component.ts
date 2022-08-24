@@ -26,40 +26,48 @@ export class EditFacilityComponent implements OnInit {
               private router: Router) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
-      const facility = this.getFacility(this.id);
-      this.facilityForm = new FormGroup({
-        id: new FormControl(facility.id),
-        serviceName: new FormControl(facility.serviceName, [Validators.required]),
-        usableArea: new FormControl(facility.usableArea, [Validators.required]),
-        rentalCosts: new FormControl(facility.rentalCosts, [Validators.required]),
-        maxNumberOfPeople: new FormControl(facility.maxNumberOfPeople, [Validators.required]),
-        typeRental: new FormControl(facility.rentalType, [Validators.required]),
-        roomStandard: new FormControl(facility.roomStandard, [Validators.required]),
-        poolArea: new FormControl(facility.poolArea, [Validators.required,Validators.pattern('^\\d*[1-9]\\d*$')]),
-        otherAmenitiesDescription: new FormControl(facility.otherAmenitiesDescription, [Validators.required]),
-        ofFloors: new FormControl(facility.ofFloors, [Validators.required,Validators.pattern('^\\d*[1-9]\\d*$')]),
-        freeServiceIncluded: new FormControl(facility.freeServiceIncluded, [Validators.required]),
+      this.facilityService.findById(this.id).subscribe(facility => {
+        this.facilityForm.patchValue(facility);
+
       });
+    });
+    this.facilityForm = new FormGroup({
+      serviceName: new FormControl('', [Validators.required]),
+      usableArea: new FormControl('', [Validators.required]),
+      rentalCosts: new FormControl('', [Validators.required]),
+      maxNumberOfPeople: new FormControl('', [Validators.required]),
+      typeRental: new FormControl('', [Validators.required]),
+      roomStandard: new FormControl('', [Validators.required]),
+      poolArea: new FormControl('', [Validators.required, Validators.pattern('^\\d*[1-9]\\d*$')]),
+      otherAmenitiesDescription: new FormControl('', [Validators.required]),
+      ofFloors: new FormControl('', [Validators.required, Validators.pattern('^\\d*[1-9]\\d*$')]),
+      url: new FormControl(''),
+      freeServiceIncluded: new FormControl('', [Validators.required]),
     });
   }
 
   ngOnInit(): void {
-    this.facilityRenType = this.facilityRenTypeService.getAll();
+    this.getAllRenType();
     this.facilityTypeName = this.facilityTypeService.facilityTypeList;
   }
+
   private getFacility(id: number) {
-    return this.facilityService.findById(id);
+    return;
+
   }
+
   updateCustomer(id: number) {
     const facility = this.facilityForm.value;
-    this.facilityService.updateFacility(id, facility);
-    this.facilityForm.reset();
-    this.router.navigateByUrl('/facility/list').then(() => {
-      setTimeout(() => {
-        alert('Them moi thanh cong!');
-      }, 200);
+    this.facilityService.updateFacility(id, facility).subscribe(() => {
+      this.router.navigateByUrl('/facility/list').then(() => {
+        setTimeout(() => {
+          alert('Them moi thanh cong!');
+        }, 200);
+      });
     });
+
   }
+
   setFacility(event) {
     this.typeValue = event.target.value;
     console.log(event);
@@ -68,5 +76,15 @@ export class EditFacilityComponent implements OnInit {
 
     } else if (this.typeValue === '3') {
     }
+  }
+
+  getAllType() {
+
+  }
+
+  getAllRenType() {
+    this.facilityRenTypeService.getAll().subscribe(data => {
+      return this.facilityRenType = data;
+    });
   }
 }

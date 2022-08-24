@@ -11,10 +11,6 @@
               <h3 style="text-align: center" class="fw-semibold">Edit Facility
               </h3>
               <form class="px-md-2" [formGroup]="facilityForm" (ngSubmit)="updateCustomer(id)">
-                <div hidden class="form-outline mb-4">
-                  <label class="form-label" for="form3Example1q">id</label>
-                  <input type="text" id="form3Example1q1" class="form-control" name="id" formControlName="id"/>
-                </div>
                 <div>
                   <label class="form-label" for="form3Example1q">Service name</label>
                   <select (change)="setFacility($event)" class="form-select" id="form3Example1q" name="serviceName"
@@ -27,25 +23,27 @@
                   <label class="form-label" for="form3Example1q">Usable area</label>
                   <input type="text" id="form3Example1q2" class="form-control" name="usableArea"
                          formControlName="usableArea">
-                                    <p style="color: red"
-                                       *ngIf="facilityForm.controls.usableArea.hasError('required') && facilityForm.touched">
-                                      * Không được bỏ trống</p>
+                  <p style="color: red"
+                     *ngIf="facilityForm.controls.usableArea.hasError('required') && facilityForm.touched">
+                    * Không được bỏ trống</p>
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">Rental costs</label>
                   <input type="text" id="form3Example1q3" class="form-control" name="rentalCosts"
                          formControlName="rentalCosts">
-                                    <p style="color: red"
-                                       *ngIf="facilityForm.controls.rentalCosts.hasError('required') && facilityForm.touched">
-                                      * Không được bỏ trống</p>
+                  <p style="color: red"
+                     *ngIf="facilityForm.controls.rentalCosts.
+                     hasError('required') && facilityForm.touched">
+                    * Không được bỏ trống</p>
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">Max number of people</label>
                   <input type="text" id="form3Example1q4" class="form-control" name="maxNumberOfPeople"
                          formControlName="maxNumberOfPeople">
-                                    <p style="color: red"
-                                       *ngIf="facilityForm.controls.maxNumberOfPeople.hasError('required') && facilityForm.touched">
-                                      * Không được bỏ trống</p>
+                  <p style="color: red"
+                     *ngIf="facilityForm.controls.maxNumberOfPeople.
+                     hasError('required') && facilityForm.touched">
+                    * Không được bỏ trống</p>
                 </div>
 
                 <div class="mb-3">
@@ -55,7 +53,7 @@
                           formGroupName="typeRental">
                     <option value="" disabled selected="selected">Please choose</option>
                     <option *ngFor="let facilityRenType of facilityRenType"
-                            [ngValue]="facilityRenType">{{facilityRenType.name}}</option>
+                            [value]="facilityRenType">{{facilityRenType.name}}</option>
 
                   </select>
                 </div>
@@ -64,26 +62,26 @@
                   <label class="form-label" for="form3Example1q">Room standard</label>
                   <input type="text" id="form3Example1q6" class="form-control" name="roomStandard"
                          formControlName="roomStandard">
-                                    <p style="color: red"
-                                       *ngIf="facilityForm.controls.roomStandard.hasError('required') && facilityForm.touched">
-                                      * Không được bỏ trống</p>
+                  <p style="color: red"
+                     *ngIf="facilityForm.controls.roomStandard.hasError('required') && facilityForm.touched">
+                    * Không được bỏ trống</p>
                 </div>
 
                 <div class="form-outline mb-4" [hidden]="typeValue==='2: 3'">
                   <label class="form-label" for="form3Example1q">Other amenities description</label>
                   <input type="text" id="form3Example1q7" class="form-control" name="otherAmenitiesDescription"
                          formControlName="otherAmenitiesDescription">
-                                    <p style="color: red"
-                                       *ngIf="facilityForm.controls.otherAmenitiesDescription.hasError('required') && facilityForm.touched">
-                                      * Không được bỏ trống</p>
+                  <p style="color: red"
+                     *ngIf="facilityForm.controls.otherAmenitiesDescription.hasError('required') && facilityForm.touched">
+                    * Không được bỏ trống</p>
                 </div>
                 <div class="form-outline mb-4" [hidden]="typeValue==='2: 3'">
                   <label class="form-label" for="form3Example1q">Number of Floors </label>
                   <input type="text" id="form3Example1q8" class="form-control"
                          formControlName="ofFloors" name="ofFloors">
-                                    <p style="color: red"
-                                       *ngIf="facilityForm.controls.ofFloors.hasError('required') && facilityForm.touched">
-                                      * Không được bỏ trống</p>
+                  <p style="color: red"
+                     *ngIf="facilityForm.controls.ofFloors.hasError('required') && facilityForm.touched">
+                    * Không được bỏ trống</p>
                   <p style="color: red"
                      *ngIf="facilityForm.controls.ofFloors.hasError('pattern') && facilityForm.touched">
                     * Số tầng phải là nguyên dương</p>
@@ -92,9 +90,9 @@
                   <label class="form-label" for="form3Example1q">Pool area </label>
                   <input type="text" id="form3Example1q11" class="form-control"
                          formControlName="poolArea" name="poolArea">
-                                    <p style="color: red"
-                                       *ngIf="facilityForm.controls.poolArea.hasError('required') && facilityForm.touched">
-                                      * Không được bỏ trống</p>
+                  <p style="color: red"
+                     *ngIf="facilityForm.controls.poolArea.hasError('required') && facilityForm.touched">
+                    * Không được bỏ trống</p>
                   <p style="color: red"
                      *ngIf="facilityForm.controls.poolArea.hasError('pattern') && facilityForm.touched">
                     * Hồ bơi phải là nguyên dương</p>
@@ -103,9 +101,9 @@
                   <label class="form-label" for="form3Example1q">free service </label>
                   <input type="text" id="form3Example1q9" class="form-control" name="freeServiceIncluded"
                          formControlName="freeServiceIncluded">
-                                    <p style="color: red"
-                                       *ngIf="facilityForm.controls.freeServiceIncluded.hasError('required') && facilityForm.touched">
-                                      * Không được bỏ trống</p>
+                  <p style="color: red"
+                     *ngIf="facilityForm.controls.freeServiceIncluded.hasError('required') && facilityForm.touched">
+                    * Không được bỏ trống</p>
                 </div>
 
                 <button type="submit" class="btn btn-success btn-lg mb-1">Edit</button>

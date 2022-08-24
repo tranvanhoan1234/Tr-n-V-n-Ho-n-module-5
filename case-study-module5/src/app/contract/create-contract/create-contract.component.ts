@@ -20,8 +20,8 @@ export class CreateContractComponent implements OnInit {
   facilityList: Facility[] = [];
   contractForm: FormGroup = new FormGroup({
     idContract: new FormControl('', [Validators.required]),
-    customer: new FormControl('', [Validators.required]),
-    facility: new FormControl('', [Validators.required]),
+    // customer: new FormControl('', [Validators.required]),
+    // facility: new FormControl('', [Validators.required]),
     contractDate: new FormControl('', [Validators.required, checkDate]),
     contractEndDate: new FormControl('', [Validators.required, checkDate]),
     deposits: new FormControl('', [Validators.required, Validators.pattern('[1-9][0-9]*')]),
@@ -33,8 +33,8 @@ export class CreateContractComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.customerList = this.customerService.getAll();
-    this.facilityList = this.facilityService.getAll();
+    // this.customerList = this.customerService.getAll();
+    // this.facilityList = this.facilityService.getAll();
     this.contract = this.contractService.getAll();
 
   }

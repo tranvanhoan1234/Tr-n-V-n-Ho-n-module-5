@@ -10,21 +10,21 @@
             <h3 style="text-align: center" class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"> Create Contract </h3>
 
           </div>
-          <form class="px-md-2" [formGroup]="contractForm" (ngSubmit)="submit()">
-            <div class="form-outline mb-4">
-              <select class="form-select" formControlName="facility" name="facility">
-                <option [defaultSelected]="contractForm" value="" disabled>Choose service</option>
-                <option *ngFor="let facility of facilityList"
-                        [ngValue]="facility.serviceName">{{facility.serviceName}}</option>
-              </select>
+<!--          <form class="px-md-2" [formGroup]="contractForm" (ngSubmit)="submit()">-->
+<!--            <div class="form-outline mb-4">-->
+<!--              <select class="form-select" formControlName="facility" name="facility">-->
+<!--                <option [defaultSelected]="contractForm" value="" disabled>Choose service</option>-->
+<!--                <option *ngFor="let facility of facilityList"-->
+<!--                        [ngValue]="facility.serviceName">{{facility.serviceName}}</option>-->
+<!--              </select>-->
 
-            </div>
-            <div class="form-outline mb-4">
-              <select class="form-select" formControlName="customer" name="customer">
-                <option [defaultSelected]="contractForm" value="">--Choose customer--</option>
-                <option *ngFor="let customer of customerList" [ngValue]="customer.name">{{customer.name}}</option>
-              </select>
-            </div>
+<!--            </div>-->
+<!--            <div class="form-outline mb-4">-->
+<!--              <select class="form-select" formControlName="customer" name="customer">-->
+<!--                <option [defaultSelected]="contractForm" value="">&#45;&#45;Choose customer&#45;&#45;</option>-->
+<!--                <option *ngFor="let customer of customerList" [ngValue]="customer.name">{{customer.name}}</option>-->
+<!--              </select>-->
+<!--            </div>-->
 
             <div class="form-outline mb-4">
               <label class="form-label" for="form3Example1q1">Start day</label>
@@ -61,7 +61,7 @@
                       class="btn btn-success btn-lg mb-1">Close
               </button>
             </div>
-          </form>
+<!--          </form>-->
         </div>
       </div>
     </div>

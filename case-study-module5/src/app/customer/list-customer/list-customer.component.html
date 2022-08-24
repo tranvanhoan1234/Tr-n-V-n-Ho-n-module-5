@@ -33,18 +33,21 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let item of customers,let i=index;">
+          <tr *ngFor="let item of customers | paginate: { itemsPerPage: 10, currentPage: p },let i=index;">
             <td>{{i+1}}</td>
             <td>{{item.name}}</td>
-            <td>{{item.dateOfBirth}}</td>
+            <td>{{item.dateOfBirth |date:'dd/MM/yyyy'}}</td>
             <td>{{item.gender}}</td>
             <td>{{item.cardNumber}}</td>
             <td>{{item.phoneNumber}}</td>
             <td>{{item.email}}</td>
-            <td>{{item.guestType.name}}</td>
+            <td>{{item.customerType}}</td>
             <td>{{item.address}}</td>
             <td>
-              <div class="col button-sua"><a [routerLink]="['/customer/edit',item.id]" class="btn btn-outline-warning">Edit</a>
+              <div class="col button-sua">
+                <a [routerLink]="['/customer/edit',item.id]" class="btn btn-outline-warning">
+                Edit
+              </a>
               </div>
             </td>
             <td>
@@ -57,8 +60,6 @@
               </div>
             </td>
           </tr>
-
-
           <!-- Modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                aria-hidden="true">
@@ -70,16 +71,10 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal"
                           aria-label="Close"></button>
                 </div>
-                <!--                            delete moda-->
+                <!--                            delete modal-->
                 <div class="modal-body">
-<!--                                  <form class="px-md-2" >-->
-
                   <div class="form-outline mb-4">
-                    <p>are you sure you want to delete customer with id : </p>
-                    <label class="form-label">....</label>
-                  </div>
-                  <div class="form-outline mb-4">
-                    <p>end name with : </p>
+                    <p>Are you sure to remove the name as : </p>
                     <label class="form-label" *ngIf="customerDelete">{{customerDelete.name}}</label>
                   </div>
 <!--                                  </form>-->
@@ -95,21 +90,8 @@
           </div>
           </tbody>
         </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </div>
-      <!--      </form>-->
-      <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Previous</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav>
     </div>
   </div>
 </div>
