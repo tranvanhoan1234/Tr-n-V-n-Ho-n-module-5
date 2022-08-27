@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerService} from '../service/customer.service';
 import {Router} from '@angular/router';
 import {CustomerType} from '../module/customer-type';
@@ -55,5 +55,6 @@ export class CreateCustomerComponent implements OnInit {
       this.customerTypeList = value;
     });
   }
+
 
 }

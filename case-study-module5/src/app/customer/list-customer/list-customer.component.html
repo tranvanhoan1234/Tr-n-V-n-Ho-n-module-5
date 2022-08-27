@@ -14,6 +14,11 @@
              routerLink='/customer/create'> Create Customer</a>
         </figure>
       </div>
+       <div>
+         <input type="text" placeholder=" Tìm kiếm" [(ngModel)]="search">
+        <button type="button" style="margin-left: 5px" (click)="searchCustomer()">Search</button>
+       </div>
+
       <!--      <form action="">-->
       <div class="container-md">
         <table class="table table-bordered " style="text-align: center">
@@ -33,7 +38,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let item of customers | paginate: { itemsPerPage: 10, currentPage: p },let i=index;">
+          <tr *ngFor="let item of customers | paginate: { itemsPerPage: 1, currentPage: p },let i=index;">
             <td>{{i+1}}</td>
             <td>{{item.name}}</td>
             <td>{{item.dateOfBirth |date:'dd/MM/yyyy'}}</td>
@@ -45,7 +50,7 @@
             <td>{{item.address}}</td>
             <td>
               <div class="col button-sua">
-                <a [routerLink]="['/customer/edit',item.id]" class="btn btn-outline-warning">
+                <a [routerLink]="['/BenhAn/edit',item.id]" class="btn btn-outline-warning">
                 Edit
               </a>
               </div>
@@ -90,7 +95,7 @@
           </div>
           </tbody>
         </table>
-        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+<!--        <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
       </div>
     </div>
   </div>

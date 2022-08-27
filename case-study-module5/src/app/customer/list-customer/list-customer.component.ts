@@ -12,7 +12,8 @@ export class ListCustomerComponent implements OnInit {
   customers: Customer[] = [];
   customerDelete: Customer;
   id: number;
-  p: string | number;
+  p = 1;
+  search: string;
 
   constructor(private customerService: CustomerService, private router: Router) {
 
@@ -28,9 +29,11 @@ export class ListCustomerComponent implements OnInit {
       }
     );
   }
+
   deleteCustomer(item: Customer) {
     this.customerDelete = item;
   }
+
   remove() {
     this.customerService.deleteCustomer(this.customerDelete.id).subscribe(() => {
       setTimeout(() => {
@@ -38,6 +41,12 @@ export class ListCustomerComponent implements OnInit {
         alert('tạo thành công !');
         this.router.navigate(['customer/list']);
       }, 200);
+    });
+  }
+  searchCustomer() {
+    return this.customerService.searchCustomer(this.search).subscribe(value => {
+      this.customers = value;
+      this.p = 1;
     });
   }
 }

@@ -76,36 +76,18 @@
       "id": 2
     },
     {
-      "id": 3,
-      "serviceName": "Room",
+      "serviceName": 1,
       "usableArea": 40000,
       "rentalCosts": 40000000,
       "maxNumberOfPeople": 20,
-      "rentalType": {
-        "name": "ngày"
-      },
+      "typeRental": "",
       "roomStandard": "3 sao",
+      "poolArea": "123",
       "otherAmenitiesDescription": "xông hơi",
       "ofFloors": 10,
+      "url": "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/02/anh2.jpg",
       "freeServiceIncluded": "Kem trứng",
-      "url": "https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/02/anh2.jpg"
-    },
-    {
-      "serviceName": 3,
-      "usableArea": "234",
-      "rentalCosts": "123",
-      "maxNumberOfPeople": "234",
-      "typeRental": {
-        "id": 3,
-        "name": "ngày"
-      },
-      "roomStandard": "1211",
-      "poolArea": "4234",
-      "otherAmenitiesDescription": "234",
-      "ofFloors": "23",
-      "url": "https://img.vn/",
-      "freeServiceIncluded": "123",
-      "id": 4
+      "id": 3
     }
   ],
   "rentalType": [

@@ -29,8 +29,7 @@
                   <p style="color: red" *ngIf="customerForm.controls.dateOfBirth.hasError('required') && customerForm.touched">* Không được bỏ
                     trống</p>
                   <p style="color: red"
-                     *ngIf="customerForm.controls.dateOfBirth.hasError('checkDate')&& customerForm.touched">* Đúng đinh
-                    dạng dd/mm/yyyy</p>
+                     *ngIf="customerForm.controls.dateOfBirth.hasError('customerBirthday')&& customerForm.touched">* chưa đủ 18 tuổi</p>
                 </div>
                 <div>
                   <label class="form-label" for="form3Example1q">Gender</label>

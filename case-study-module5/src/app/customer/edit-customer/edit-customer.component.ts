@@ -35,7 +35,7 @@ export class EditCustomerComponent implements OnInit {
       cardNumber: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]{9,12}$/)]),
       phoneNumber: new FormControl('', [Validators.required, Validators.pattern(/^[\+84||09][0-9]{9,10}$/)]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      customerType: new FormControl(this.id),
+      customerType: new FormControl(''),
       address: new FormControl('', [Validators.required]),
     });
   }

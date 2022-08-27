@@ -1,0 +1,98 @@
+<div class=" container">
+  <!-- car -->
+  <div class="auto-car col-lg-12">
+    <div class="img-style row">
+      <div class="button-create col-sm-12">
+        <figure class="text-center">
+          <blockquote class="blockquote">
+            <p>Welcome to our client list.</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            source <cite title="Source Title">: Văn Hoàn</cite>
+          </figcaption>
+          <a style="text-decoration:none;" type="button" class="btn  btn-outline-primary " href=""
+             routerLink='/benhAn/create'> Create Customer</a>
+        </figure>
+      </div>
+      <!--      <form action="">-->
+      <div class="container-md">
+        <table class="table table-bordered " style="text-align: center">
+          <thead>
+          <tr class="" style="background: whitesmoke">
+            <th>No.</th>
+            <th>MedicalRecordCode</th>
+            <th>PatientCode</th>
+            <th>namePatient</th>
+            <th>DateOfAdmission</th>
+            <th>DischargeDate</th>
+            <th>Season</th>
+            <th>Treatments</th>
+            <th>doctor</th>
+            <th>Edit</th>
+            <th>delete</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of medicalRecord;let i=index;">
+            <td>{{i+1}}</td>
+            <td>{{item.medicalRecordCode}}</td>
+            <td>{{item.patient}}</td>
+            <td>{{item.namePeoplePatient}}</td>
+            <td>{{item.dateOfAdmission |date:'dd/MM/yyyy'}}</td>
+            <td>{{item.dischargeDate}}</td>
+            <td>{{item.season}}</td>
+            <td>{{item.treatments}}</td>
+            <td>{{item.doctor}}</td>
+            <td>
+              <div class="col button-sua">
+                <a [routerLink]="['benhAn/update',item.id]" class="btn btn-outline-warning">
+                  Edit
+                </a>
+              </div>
+            </td>
+            <td>
+              <!-- Button trigger modal -->
+              <div>
+                <button class="btn btn-outline-danger" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" (click)="recordDelete(item)">
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+               aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Delete Customer</h5>
+
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"></button>
+                </div>
+                <!--                            delete modal-->
+                <div class="modal-body">
+                  <div class="form-outline mb-4">
+                    <p>Are you sure to remove the name as : </p>
+                    <label class="form-label" *ngIf="deleteRecord">{{deleteRecord.medicalRecordCode}}</label>
+                  </div>
+                  <!--                                  </form>-->
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" (click)="remove()">Delete
+                  </button>
+                  <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          </tbody>
+        </table>
+        <!--        <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+      </div>
+    </div>
+  </div>
+</div>
+
