@@ -22,16 +22,14 @@
                   <label class="form-label" for="form3Example1q">namePeoplePatient</label>
                   <input type="text" id="form3Example1q2" class="form-control" formControlName="namePeoplePatient">
                 </div>
-                <br>
                 <div class="mb-3">
-                  <label class="form-label"> patient</label>
+                  <label class="form-label"> Patient name</label>
                   <select id="patient" formControlName="patient" name="patient" class="form-control">
                     <option value="" disabled selected="selected">Please choose</option>
                     <option *ngFor="let item of patientsList"
                             [value]="item.patientCode">{{item.patientCode}}</option>
                   </select>
                 </div>
-                <br>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">dateOfAdmission</label>
                   <input type="date" id="form3Example1q4" class="form-control" formControlName="dateOfAdmission">

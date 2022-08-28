@@ -1,10 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {MedicalRecordService} from "../../service/medical-record.service";
-import {PatientService} from "../../service/patient.service";
-import {Router} from "@angular/router";
-import {MedicalRecord} from "../../model/medical-record";
-import {Patient} from "../../model/patient";
-import {FormControl, FormGroup} from "@angular/forms";
+import {MedicalRecordService} from '../../service/medical-record.service';
+import {PatientService} from '../../service/patient.service';
+import {Router} from '@angular/router';
+import {Patient} from '../../model/patient';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-create-medical',
@@ -19,15 +18,12 @@ export class CreateComponent implements OnInit {
               private patientService: PatientService,
               private router: Router) {
   }
-
   ngOnInit(): void {
     this.getPatient();
     this.createForm();
   }
-
   createForm() {
     this.medicalForm = new FormGroup({
-      // id?: number;
       medicalRecordCode: new FormControl(),
       namePeoplePatient: new FormControl(),
       patient: new FormControl(),
@@ -41,11 +37,11 @@ export class CreateComponent implements OnInit {
   getPatient() {
     this.patientService.getAll().subscribe(value => {
       this.patientsList = value;
-    })
+    });
   }
+
   submit() {
     const medical = this.medicalForm.value;
-      console.log(medical)
     this.medicalRecordService.saveRecord(medical).subscribe(() => {
       this.medicalForm.reset();
       this.router.navigate(['/']);

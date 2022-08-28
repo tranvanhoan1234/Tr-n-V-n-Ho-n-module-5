@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {MedicalRecord} from "../../model/medical-record";
-import {MedicalRecordService} from "../../service/medical-record.service";
-import {Router} from "@angular/router";
-import {Patient} from "../../model/patient";
-import {PatientService} from "../../service/patient.service";
+import {MedicalRecord} from '../../model/medical-record';
+import {MedicalRecordService} from '../../service/medical-record.service';
+import {Router} from '@angular/router';
+import {Patient} from '../../model/patient';
+import {PatientService} from '../../service/patient.service';
 
 @Component({
   selector: 'app-medical-record',
@@ -12,24 +12,31 @@ import {PatientService} from "../../service/patient.service";
 })
 export class MedicalRecordComponent implements OnInit {
   deleteRecord: MedicalRecord;
-
-  constructor(private medicalRecordService: MedicalRecordService, private patientService: PatientService, private router: Router) {
-  }
+  search: string;
 
   medicalRecord: MedicalRecord[] = [];
-  patients: Patient[] = [];
+  patient: Patient[] = [];
 
-  ngOnInit(): void {
-    this.getAll();
+  constructor(private medicalRecordService: MedicalRecordService,
+              private patientService: PatientService,
+              private router: Router) {
   }
 
-  getAll() {
+  ngOnInit(): void {
+    this.getAllM();
+    this.getAllP();
+  }
+
+  getAllM() {
     this.medicalRecordService.getAll().subscribe(value => {
       this.medicalRecord = value;
     });
+  }
+
+  getAllP() {
     this.patientService.getAll().subscribe(value => {
-      this.patients = value;
-    })
+      this.patient = value;
+    });
   }
 
   recordDelete(item: MedicalRecord) {
@@ -39,10 +46,16 @@ export class MedicalRecordComponent implements OnInit {
   remove() {
     this.medicalRecordService.deleteRecord(this.deleteRecord.id).subscribe(() => {
       setTimeout(() => {
-        this.getAll();
+        this.getAllM();
         alert('xoá thành công !');
-        this.router.navigate(['/'])
+        this.router.navigate(['/']);
       }, 200);
     });
-  };
+  }
+
+  searchMedical() {
+    return this.medicalRecordService.searchMedicalRecord(this.search).subscribe(value => {
+      this.medicalRecord = value;
+    });
+  }
 }

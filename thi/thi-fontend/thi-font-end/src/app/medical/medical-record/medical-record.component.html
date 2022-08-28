@@ -10,6 +10,10 @@
           <figcaption class="blockquote-footer">
             source <cite title="Source Title">: Văn Hoàn</cite>
           </figcaption>
+          <div>
+            <input type="text" placeholder=" Tìm kiếm" [(ngModel)]="search">
+            <button type="button" style="margin-left: 5px" (click)="searchMedical()">Search</button>
+          </div>
           <a style="text-decoration:none;" type="button" class="btn  btn-outline-primary " href=""
              routerLink='/benhAn/create'> Create Customer</a>
         </figure>
@@ -36,7 +40,7 @@
           <tr *ngFor="let item of medicalRecord;let i=index;">
             <td>{{i+1}}</td>
             <td>{{item.medicalRecordCode}}</td>
-            <td>{{item.patient}}</td>
+            <td>{{item.patient.patientCode}}</td>
             <td>{{item.namePeoplePatient}}</td>
             <td>{{item.dateOfAdmission |date:'dd/MM/yyyy'}}</td>
             <td>{{item.dischargeDate}}</td>
@@ -90,7 +94,24 @@
           </div>
           </tbody>
         </table>
-        <!--        <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+        <nav aria-label="...">
+          <ul class="pagination">
+            <li class="page-item disabled">
+              <span class="page-link">Previous</span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active">
+      <span class="page-link">
+        2
+        <span class="sr-only">(current)</span>
+      </span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>

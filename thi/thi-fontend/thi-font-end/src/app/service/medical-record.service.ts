@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {MedicalRecord} from "../model/medical-record";
-import {environment} from "../../environments/environment";
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {MedicalRecord} from '../model/medical-record';
+import {environment} from '../../environments/environment';
 
-const URL_API = `${environment.ariUrl}`
+const URL_API = `${environment.ariUrl}`;
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class MedicalRecordService {
   constructor(private httpClient: HttpClient) {
   }
   getAll(): Observable<MedicalRecord[]> {
-    return this.httpClient.get<MedicalRecord[]>(URL_API + '/benhAn/list')
+    return this.httpClient.get<MedicalRecord[]>(URL_API + '/benhAn/list');
   }
 
   saveRecord(medicalRecord) {
@@ -21,14 +21,19 @@ export class MedicalRecordService {
   }
 
   findById(id: number): Observable<MedicalRecord> {
-    return this.httpClient.get<MedicalRecord>(`${URL_API}'/benhAn/findById'${id}`);
+    return this.httpClient.get<MedicalRecord>(`${URL_API}/benhAn/findById/${id}`);
   }
 
   updateRecord(id: number, medicalRecord: MedicalRecord): Observable<MedicalRecord> {
-    return this.httpClient.put<MedicalRecord>(`${URL_API}'/benhAn/update'${id}`, medicalRecord)
+    return this.httpClient.put<MedicalRecord>(`${URL_API}/benhAn/update/${id}`, medicalRecord);
   }
 
   deleteRecord(id: number): Observable<MedicalRecord> {
-    return this.httpClient.delete<MedicalRecord>(`${URL_API}'/benhAn/delete'${id}`)
+    return this.httpClient.delete<MedicalRecord>(`${URL_API}/benhAn/delete/${id}`);
+  }
+
+  searchMedicalRecord(search: string): Observable<MedicalRecord[]> {
+    return this.httpClient.get<MedicalRecord[]>(`${URL_API}/benhAn/search?q=` + search);
+
   }
 }

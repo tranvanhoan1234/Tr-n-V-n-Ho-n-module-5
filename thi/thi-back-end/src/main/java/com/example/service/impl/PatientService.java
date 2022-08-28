@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class PatientService implements IPatientService {
     @Autowired
@@ -15,7 +16,7 @@ public class PatientService implements IPatientService {
 
     @Override
     public List<Patient> findAll() {
-        return iPatientRepository.findAllPatient();
+        return iPatientRepository.findAll();
     }
 
 }

@@ -15,10 +15,5 @@ import java.util.List;
 public interface IPatientRepository extends JpaRepository<Patient, Integer> {
     @Query(value = "select * from patient", nativeQuery = true)
     List<Patient> findAllPatient();
-//@Transactional
-//@Modifying
-//    @Query(value = "INSERT INTO: `medicalrecord`.`medical_record`" +
-//            " (`id`, `date_of_admission`, `discharge_date`, `doctor`, `medical_record_code`," +
-//            " `name_people_patient`, `season`, `treatments`, `id_patient`)",nativeQuery = true)
 
 }

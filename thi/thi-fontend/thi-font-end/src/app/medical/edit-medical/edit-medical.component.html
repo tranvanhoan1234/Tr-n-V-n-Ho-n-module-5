@@ -12,15 +12,27 @@
                  alt="Sample photo">
             <div class="card-body p-4 p-md-5">
               <h3 style="text-align: center" class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"> Create Customer </h3>
-
               <form class="px-md-2" [formGroup]="medicalForm" (ngSubmit)="updateMedical(id)">
+                <div hidden class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q">id</label>
+                  <input type="text" id="form3Example1q1" class="form-control" formControlName="id">
+
+                </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">medicalRecordCode</label>
                   <input type="text" id="form3Example1q" class="form-control" formControlName="medicalRecordCode">
+                  <p style="color: red"
+                     *ngIf="medicalForm.controls.medicalRecordCode.hasError('required') && medicalForm.dirty">
+                    Không được bỏ trống
+                  </p>
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">namePeoplePatient</label>
                   <input type="text" id="form3Example1q2" class="form-control" formControlName="namePeoplePatient">
+                  <p style="color: red"
+                     *ngIf="medicalForm.controls.namePeoplePatient.hasError('required') && medicalForm.dirty">
+                    Không được bỏ trống
+                  </p>
                 </div>
                 <div class="mb-3">
                   <label class="form-label"> patient</label>
@@ -29,31 +41,49 @@
                     <option *ngFor="let item of parientList"
                             [value]="item.patientCode">{{item.patientCode}}</option>
                   </select>
+
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">dateOfAdmission</label>
                   <input type="date" id="form3Example1q4" class="form-control" formControlName="dateOfAdmission">
-
+                  <p style="color: red"
+                     *ngIf="medicalForm.controls.dateOfAdmission.hasError('required') && medicalForm.dirty">
+                    Không được bỏ trống
+                  </p>
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">dischargeDate</label>
                   <input type="date" id="form3Example1q7" class="form-control" formControlName="dischargeDate">
+                  <p style="color: red"
+                     *ngIf="medicalForm.controls.dischargeDate.hasError('required') && medicalForm.dirty">
+                    Không được bỏ trống
+                  </p>
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">season </label>
                   <input type="text" id="form3Example1q9" class="form-control" formControlName="season">
+                  <p style="color: red" *ngIf="medicalForm.controls.season.hasError('required') && medicalForm.dirty">
+                    Không được bỏ trống
+                  </p>
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">treatments </label>
                   <input type="text" id="form3Example1q10" class="form-control" formControlName="treatments">
+                  <p style="color: red"
+                     *ngIf="medicalForm.controls.treatments.hasError('required') && medicalForm.dirty">
+                    Không được bỏ trống
+                  </p>
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form3Example1q">doctor </label>
                   <input type="text" id="form3Example1q11" class="form-control" formControlName="doctor">
+                  <p style="color: red" *ngIf="medicalForm.controls.doctor.hasError('required') && medicalForm.dirty">
+                    Không được bỏ trống
+                  </p>
                 </div>
                 <button type="submit" class="btn btn-success btn-lg mb-1" [disabled]="!medicalForm.valid">Edit
                 </button>
-                <a style="margin-left: 5px" type="submit" href="" routerLink='/benhAn/list'
+                <a style="margin-left: 5px" type="submit" href="" routerLink='/'
                    class="btn btn-success btn-lg mb-1">Close</a>
               </form>
             </div>

@@ -12,7 +12,6 @@ public class MedicalRecord {
     private Integer id;
     private String medicalRecordCode;
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "id_patient",referencedColumnName = "id")
     private Patient patient;
     private String namePeoplePatient;
@@ -23,7 +22,6 @@ public class MedicalRecord {
     private String doctor;
     public MedicalRecord() {
     }
-
     public MedicalRecord(Integer id, String medicalRecordCode, Patient patient, String namePeoplePatient, Date dateOfAdmission, Date dischargeDate, String season, String treatments, String doctor) {
         this.id = id;
         this.medicalRecordCode = medicalRecordCode;

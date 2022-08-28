@@ -1,6 +1,7 @@
 package com.example.service;
 
 import com.example.model.MedicalRecord;
+
 import java.util.List;
 
 public interface IMedicalRecordService {
@@ -9,5 +10,8 @@ public interface IMedicalRecordService {
     void save(MedicalRecord medicalRecord);
 
     void delete(int id);
+
     MedicalRecord findById(int id);
+
+    List<MedicalRecord> searchMedical(String search);
 }

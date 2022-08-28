@@ -4,11 +4,13 @@ import com.example.model.MedicalRecord;
 import com.example.model.Patient;
 import com.example.service.IMedicalRecordService;
 import com.example.service.IPatientService;
+import org.hibernate.annotations.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 @CrossOrigin
@@ -25,6 +27,7 @@ public class MedicalRecordController {
     private List<Patient> getPatient() {
         return this.iPatientService.findAll();
     }
+
     @GetMapping("/list")
     public ResponseEntity<List<MedicalRecord>> getMedical() {
         List<MedicalRecord> medicalRecords = iMedicalRecordService.findAll();
@@ -33,7 +36,7 @@ public class MedicalRecordController {
         }
         return new ResponseEntity<>(medicalRecords, HttpStatus.OK);
     }
-    @GetMapping("findById/{id}")
+    @GetMapping("/findById/{id}")
     public ResponseEntity<MedicalRecord> findById(@PathVariable("id") int id) {
         MedicalRecord medicalRecord = iMedicalRecordService.findById(id);
         if (medicalRecord == null) {
@@ -46,7 +49,7 @@ public class MedicalRecordController {
         iMedicalRecordService.save(medicalRecord);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-    @PutMapping("update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<MedicalRecord> update(@PathVariable("id") Integer id, @RequestBody MedicalRecord medicalRecord) {
         if (medicalRecord == null) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -54,7 +57,8 @@ public class MedicalRecordController {
         iMedicalRecordService.save(medicalRecord);
         return new ResponseEntity<>(medicalRecord, HttpStatus.OK);
     }
-    @DeleteMapping("delete/{id}")
+
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<MedicalRecord> delete(@PathVariable("id") int id) {
         MedicalRecord medicalRecord = iMedicalRecordService.findById(id);
         if (medicalRecord == null) {
@@ -63,4 +67,10 @@ public class MedicalRecordController {
         iMedicalRecordService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @PostMapping("/search")
+    public ResponseEntity<List<MedicalRecord>> searchMedical(@RequestParam("search") String search) {
+        return ResponseEntity.ok(iMedicalRecordService.searchMedical(search));
+    }
+
 }

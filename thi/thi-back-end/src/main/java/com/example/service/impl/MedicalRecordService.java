@@ -17,7 +17,6 @@ public class MedicalRecordService implements IMedicalRecordService {
     public List<MedicalRecord> findAll() {
         return iMedicalRecordRepository.findAllMedical();
     }
-
     @Override
     public void save(MedicalRecord medicalRecord) {
         iMedicalRecordRepository.save(medicalRecord);
@@ -29,6 +28,11 @@ public class MedicalRecordService implements IMedicalRecordService {
     @Override
     public MedicalRecord findById(int id) {
         return iMedicalRecordRepository.findByIdMedical(id);
+    }
+    @Override
+    public List<MedicalRecord> searchMedical(String search) {
+        return iMedicalRecordRepository.searchMedical(search);
+
     }
 
 }

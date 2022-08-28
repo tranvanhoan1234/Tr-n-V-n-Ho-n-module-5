@@ -21,7 +21,6 @@ public class Patient {
     public Patient(Integer id, String patientCode, List<MedicalRecord> medicalRecordList) {
         this.id = id;
         this.patientCode = patientCode;
-
         this.medicalRecordList = medicalRecordList;
     }
 

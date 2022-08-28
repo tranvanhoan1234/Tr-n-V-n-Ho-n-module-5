@@ -1,10 +1,10 @@
-import {Patient} from "./patient";
+import {Patient} from './patient';
 
-export interface MedicalRecord{
+export interface MedicalRecord {
   id?: number;
   medicalRecordCode?: string;
-  namePeoplePatient?:string;
-  patient?:Patient;
+  namePeoplePatient?: string;
+  patient?: Patient;
   dateOfAdmission?: string;
   dischargeDate?: string;
   season?: string;
